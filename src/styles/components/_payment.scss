@@ -43,9 +43,10 @@
         font-size: 40px;
     }
     h3{
-        font-family: "Merienda";
+        font-family: "Inter";
+        font-size: 30px;
         margin-top: 120px;
-        margin-left: 200px;
+        margin-left: 160px;
     }
     hr{
         border: 1px solid black;
@@ -67,7 +68,7 @@
         border-left: 1px solid black;
         height: 590px;
         margin-left: 919px;
-        margin-top: -440px;
+        margin-top: -515px;
       }
       #discussion{
         background-size: cover;
@@ -78,9 +79,11 @@
         top: 158px;
       }
       p{
-        font-family: "MeriendaBold";
-        width: 550px;
-        margin-top: 200px;
+        font-family: "Inter";
+        font-size: 28px;
+        width: 720px;
+        margin-top: 70px;
+        margin-left: 100px;
       }
       button{
         background: #EDD8A8;
@@ -88,5 +91,10 @@
         border-radius: 5px;
         width: 144px;
         height: 37px;
+        margin-top: 50px;
+        margin-left: 350px;
+      }
+      #divpayment{
+        
       }
 }
