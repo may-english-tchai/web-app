@@ -5,7 +5,7 @@ const Concept = () => {
   return (
     <div className="Concept">
       <div id="relative">
-        <div id="pinkdiv"><img src="/cafe1.png" alt="cafe" /></div>
+        <div id="pinkdiv"><img src="img/cafe1.png" alt="cafe" /></div>
         <div id="presentation">
           <h2><hr />Concept<hr /></h2>
           <br />

@@ -1,0 +1,124 @@
+.Join{
+    @font-face {
+        font-family: "Merienda";
+        src: url(../../assets/fonts/Merienda-Bold.ttf);
+        }
+        @font-face {
+        font-family: "Inter";
+        src: url(../../assets/fonts/Inter-Medium.ttf);
+        
+        }
+        @font-face {
+            font-family: "Laila";
+            src: url(../../assets/fonts/Laila-Regular.ttf);
+        }
+        @font-face {
+            font-family: "InterLight";
+            src: url(../../assets/fonts/Inter-Light.ttf);
+        }
+        $font-primary: Merienda;
+        $font-secondary: Inter;
+        $font-three:Laila;
+        
+    
+        #bg{
+           height: 900px;
+           width: 1400px; 
+           background-size: cover;
+        }
+        #para{
+        flex-direction: column;
+        position: absolute;
+        height: 578px;
+        width: 808px;
+        background: rgba(255, 255, 255, 0.45);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 0 10px 10px 0;
+        padding-top: 60px;
+        top: 90px;
+        }
+        
+        #pOne{
+        font-family: "InterLight";
+        font-size: 30px;
+        color: #775460;
+        margin-left: 18px;
+        }
+        #pTwo{
+        font-family: "Laila";
+        font-size:64px ;
+        margin-top: 60px;
+        color: #775460;
+        margin-left: 18px;
+        }
+        #pThree{
+            font-family: "Inter";
+            margin-top: 85px;
+            font-size: 30px;
+            color: #775460;
+            margin-left: 18px;
+        }
+        button{
+        background: rgba(255, 255, 255, 0.45);
+        border: 1px solid #000000;
+        border-radius: 5px;
+        width: 178px;
+        height: 50px;
+        margin-top: 55px;
+        margin-left: 283px;
+        }
+        #relative{
+            position: relative;
+        }
+        @media screen and (max-width: 900px) {
+            #bg{
+                height: 300px;
+                width: 500px; 
+                background-size: cover;
+             }
+             #para{
+                position: absolute;
+                height: 227px;
+                width: 340px;
+                background: rgba(255, 255, 255, 0.45);
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 0 10px 10px 0;
+                padding-top: 10px;
+                top: 27px;
+                }
+            #pOne{
+            font-family: "InterLight";
+            font-size: 13px;
+            margin-left: 18px;
+            width: 280px;
+            margin-top: 13px;
+                    }
+            #pTwo{
+                font-family: "Laila";
+                font-size:18px ;
+                margin-top: 20px;
+                margin-left: 18px;
+                        }
+            #pThree{
+                font-family: "Inter";
+                margin-top: 21px;
+                font-size: 12px;
+                margin-left: 18px;
+                        }
+            button{
+            background: rgba(255, 255, 255, 0.45);
+            border: 1px solid #000000;
+            border-radius: 5px;
+            width: 109px;
+            height: 25px;
+            margin-top: 22px;
+            margin-left: 99px;
+            }
+
+
+        }
+
+
+          
+            
+    }

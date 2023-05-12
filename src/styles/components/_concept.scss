@@ -36,7 +36,7 @@
         display: flex;
         flex-direction: column;
         position: absolute;
-        left: 460px;
+        left: 480px;
         top: -0px;
     }
     h4{
@@ -63,6 +63,60 @@
     #relative{
         display: flex;
         position: relative;
+    }
+    @media screen and (max-width: 900px) {
+        img{
+            height: 300px;
+            width: 300px;
+        }
+        #presentation{
+            background: rgba(216, 205, 182, 0.14);
+            border: 1px solid #DCB253;
+            border-radius: 8px;
+            width: 380px;
+            height: 665px;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 4px;
+            top: 0px;
+            margin: 0%;
+        }
+        #pinkdiv{
+            background: rgba(216, 205, 182, 0.14);
+            margin-top: 390px;
+            margin-left: 45px;
+        } 
+        p{
+            font-family: Inter;
+            margin-top: 48px;
+            font-size: 20px;
+        }
+        #para{
+            margin: 0 auto;
+            height: 100px;
+            width: 350px;
+        }
+        h4{
+            font-family: Inter;
+            font-size:19px;
+            color: #D0831C;
+            margin-top: 10px;
+            margin-left: 9px;
+        }
+        h2{
+            font-family: Merienda;
+            color: #FD6C9E;
+            font-size: 35px;
+            display: flex;
+            margin-left: -3px;
+            margin: 10px;
+        }
+        hr{
+            border: 1px solid #FD81AB;
+            width: 100px;
+        }
+
     }
     
     
