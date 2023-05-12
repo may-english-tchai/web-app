@@ -4,6 +4,7 @@ import Home from './views/Home';
 import Concept from './views/Concept';
 import Reservation from './views/Reservation';
 import Join from './views/Join';
+import Payment from './views/Payment';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
     <Route path='/join' element={<Join />} />
     <Route path='/concept' element={<Concept />} />
     <Route path='/reservation' element={<Reservation />} />
+    <Route path='/Payment' element={<Payment />} />
     </Routes>
     </BrowserRouter>
   );

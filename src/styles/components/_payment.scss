@@ -1,0 +1,92 @@
+.Payment{
+    @font-face {
+        font-family: "Merienda";
+        src: url(../../assets/fonts/Merienda-Bold.ttf);
+        }
+        @font-face {
+        font-family: "Inter";
+        src: url(../../assets/fonts/Inter-Medium.ttf);
+        
+        }
+        @font-face {
+            font-family: "Laila";
+            src: url(../../assets/fonts/Laila-Regular.ttf);
+        }
+        @font-face {
+            font-family: "InterLight";
+            src: url(../../assets/fonts/Inter-Light.ttf);
+        }
+        @font-face {
+            font-family: "MeriendaBold";
+            src: url(../../assets/fonts/Merienda-Bold.ttf);
+        }
+        $font-primary: Merienda;
+        $font-secondary: Inter;
+        $font-three:Laila;
+    #relative{
+        display: flex;
+        position: relative;
+    }
+    #bg{
+        width: 50%;
+        height: 961px;
+        background-size: cover;
+    }
+    #divOne{
+        width: 50%;
+        height: 960px;
+    }
+    h2{
+        display: flex;
+        font-family: "MeriendaBold";
+        margin-top: 18px;
+        font-size: 40px;
+    }
+    h3{
+        font-family: "Merienda";
+        margin-top: 120px;
+        margin-left: 200px;
+    }
+    hr{
+        border: 1px solid black;
+        margin: auto;
+        width: 200px;
+    }
+    #para{
+        box-sizing: border-box;
+        position: absolute;
+        width: 1394px;
+        height: 662px;
+        left: 40px;
+        top: 135px;
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(113, 111, 111, 0.8);
+        border-radius: 12px;
+    }
+    .vertical-line {
+        border-left: 1px solid black;
+        height: 590px;
+        margin-left: 919px;
+        margin-top: -440px;
+      }
+      #discussion{
+        background-size: cover;
+        height: 200px;
+        width: 250px;
+        position: absolute;
+        left: 659px;
+        top: 158px;
+      }
+      p{
+        font-family: "MeriendaBold";
+        width: 550px;
+        margin-top: 200px;
+      }
+      button{
+        background: #EDD8A8;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        width: 144px;
+        height: 37px;
+      }
+}
