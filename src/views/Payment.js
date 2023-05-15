@@ -19,6 +19,7 @@ const Payment = () => {
                         <div class="vertical-line"></div>
                         
                         
+                        
 
 
                     </div>
