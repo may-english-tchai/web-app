@@ -1,0 +1,160 @@
+@font-face {
+    font-family: "Inter";
+    src: url(/fonts/Inter-Medium.ttf);
+}
+@font-face {
+    font-family: "Merienda";
+    src: url(/fonts/Merienda-Bold.ttf);
+}
+
+
+$color2: #FD6C9E;
+$colorSpecial: linear-gradient(45deg, rgba(250, 219, 219, 1), rgba(253, 129, 171, 0.46), rgba(220, 178, 83, 1)) 1;
+$font-primary: Merienda;
+
+
+
+
+.testimony{
+
+    
+
+
+    #title{
+        display: flex;
+        justify-content: center;
+    }
+    
+
+    hr {
+        width: 30%;
+        height: 0px;
+        border: 1px solid $color2;
+        margin: 3rem 1rem;
+    }
+
+    h2 {
+        margin: 1rem;
+        font-family: $font-primary;
+        color: $color2;
+        font-size: 2.5em;
+    }
+
+    form {
+        display: grid;
+        min-width: 400px;
+        text-align: center;
+        width: 50%;
+        max-width: 600px;
+        margin: 0 auto;
+    
+        input,
+        textarea {
+        margin: 5px 0;
+        padding: 5px;
+        border-width: 3px;
+        border-image: $colorSpecial;
+        resize: none;
+        font-family: $font-primary;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        background: rgba(235, 196, 209, 0.25);
+        color: black;
+        }
+        textarea {
+        height: 80px;
+        font-family: $font-primary;
+        }
+        p {
+        font-size: 0.8rem;
+        color: red;
+        }
+        input[type="submit"] {
+        width: 200px;
+        margin-left: auto;
+        cursor: pointer;
+        transition: 0.4s;
+        background-color: #FD6C9E;
+    
+        &:hover {
+            color: white;
+        }
+        }
+    }
+    @media screen and (max-width: 900px) {
+        h2{
+            font-size: 1.8em;
+        }
+        
+
+        hr {
+            width: 30%;
+            margin: 2.5rem 0.8rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            
+            
+        
+            input,
+            textarea {
+            width: 250px;
+            
+            }
+            textarea {
+            min-width: 250px;
+            }
+        
+            input[type="submit"] {
+            
+            width: 100px;
+            margin: auto;
+            
+
+            }
+        }
+
+        
+        
+    
+    
+    }
+
+    @media screen and (max-width: 400px) {
+       
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            align-items: center;
+            
+            
+        
+            input,
+            textarea {
+            width: 50%;
+            
+            }
+            textarea {
+            min-width: 50%;
+            }
+        
+            input[type="submit"] {
+            
+            width: 100px;
+            margin: auto;
+            
+
+            }
+        }
+
+        
+        
+    
+    
+    }
+}

@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Reservation from "./components/Reservation";
+import Testimony from "./components/Testimony";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
         </Routes>
         <Reservation/>
+        <Testimony/>
       <Footer />
     </>
   );
