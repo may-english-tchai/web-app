@@ -1,8 +1,16 @@
+import Reservation from "../components/Reservation";
+import Testimony from "../components/Testimony";
+import Concept from "../components/Concept";
+import Join from "../components/Join";
+
 const Home = () => {
   return (
-    <div className="container app-home">
-      
-    </div>
+    <>
+    <Join/>
+    <Concept/>
+    <Reservation/>
+    <Testimony/>
+    </>
   );
 };
 
