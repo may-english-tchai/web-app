@@ -1,15 +1,25 @@
 import { Routes, Route } from "react-router-dom"
-import Home from "./pages/Home";
-import Payment from "./components/Payment";
+import HomePage from "./pages/HomePage";
+import PaymentPage from "./pages/PaymentPage";
+import LoginPage from "./pages/LoginPage";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
     <>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/payment' element={<Payment />} />
-        </Routes> 
+      <div style={{backgroundImage: "url('/img/thepicture.png')"}} id="bg">
+        <Header />
+      </div>
+
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/home' element={<HomePage />} />
+        <Route path='/payment' element={<PaymentPage />} />
+        <Route path='/login' element={<LoginPage />} />
+      </Routes>
+
+      <Footer />
     </>
   );
 };

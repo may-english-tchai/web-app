@@ -5,7 +5,7 @@ import Logo from './Logo';
 
 const Header = () => {
     return (
-        <div className="navigation">
+        <header className="navigation">
             <Logo />
             <ul>
                 <NavLink to="/" className={(nav)=>(nav.isActive ? "nav-active" : "")}>
@@ -24,7 +24,7 @@ const Header = () => {
                     <li>Contact</li>
                 </NavLink>
             </ul>
-        </div>
+        </header>
     );
 };
 
