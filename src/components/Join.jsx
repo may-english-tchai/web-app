@@ -1,14 +1,9 @@
 import "../assets/styles/concept.scss";
-import Header from "./Header";
 
 const Join = () => {
   return (
     <div className="Join">
-      
-
       <div id="relative">
-        <div style={{backgroundImage: "url('/img/thepicture.png')"}} id="bg">
-        <Header />
           <div id="para">
             <p id="pOne">REJOIGNEZ-NOUS POUR UNE EXPERIENCE <br></br> D&apos;APPRENTISSAGE DE LANGUE COMME AUCUNE AUTRE</p>
             <p id="pTwo">MAY ENGLISH TCHAÏ</p>
@@ -17,7 +12,6 @@ const Join = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

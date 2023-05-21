@@ -3,15 +3,15 @@ import Testimony from "../components/Testimony";
 import Concept from "../components/Concept";
 import Join from "../components/Join";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
-    <Join/>
-    <Concept/>
-    <Reservation/>
-    <Testimony/>
+      <Join/>
+      <Concept/>
+      <Reservation/>
+      <Testimony/>
     </>
   );
 };
 
-export default Home;
+export default HomePage;

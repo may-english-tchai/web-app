@@ -1,4 +1,5 @@
 import "../assets/styles/payment.scss";
+import Button from "./elements/Button";
 
 const Payment = () => {
     return (
@@ -13,17 +14,12 @@ const Payment = () => {
                             Lundi 25  Mars 2023 à 14h00<br></br>
                             Lundi 25 March 2023 at 2:00 PM<br></br>
                             Veuillez confirmer ces informations avant de procéder au paiement</p>
-                            
-                        
-                        <button>VALIDER</button>
+
+                        <div className="grid">
+                          <Button type="submit">VALIDER</Button>
+                        </div>
                         <div className="horizontal-line"></div>
                         <div className="vertical-line"></div>
-                        
-
-                        
-                        
-                        
-
 
                     </div>
                     <div style={{ backgroundImage: "url('/img/discussion2.png')" }} id="discussion"></div>
