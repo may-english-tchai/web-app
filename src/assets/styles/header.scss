@@ -15,16 +15,19 @@ $font-secondary: Inter;
     align-items: center;
     justify-content: space-between;
     z-index: -1;
+    height: 5rem;
     width: 100%;
     background-color: $color-1;
 }
 
 .navbar_logo{
     left: 0;
+    width: 144px;
 }
 
 .navbar_links{
     display: flex;
+    margin: auto;
 }
 
 .navbar_list{
@@ -50,6 +53,7 @@ $font-secondary: Inter;
         position: absolute;
         border-radius: 10px;
         bottom: 0px;
+        top: 4.1rem;
         left: 50%;
         transform: translateX(-50%);
         -webkit-animation: anim 0.3s ease forwards;
@@ -57,13 +61,13 @@ $font-secondary: Inter;
 
         @-webkit-keyframes anim {
             to {
-            width: 100%;
+            width: 65%;
             }
         }
 
         @keyframes anim {
             to {
-            width: 100%;
+            width: 65%;
             }
         }
     }
@@ -76,6 +80,7 @@ $font-secondary: Inter;
     border: none;
     color: inherit;
     z-index: 2;
+    display: none;
 }
 
 @media screen and (max-width:767px) {
@@ -108,7 +113,7 @@ $font-secondary: Inter;
         right:-100vw ;
         width: 0;
         bottom: 0;
-       
+        
         background-color: white;
         visibility: hidden;
         transition: all .8s ease-in-out;
@@ -129,15 +134,16 @@ $font-secondary: Inter;
             border-radius: 10px;
             bottom: 0px;
             
+            
             @-webkit-keyframes anim {
                 to {
-                width: 50%;
+                width: 65%;
                 }
             }
     
             @keyframes anim {
                 to {
-                width: 50%;
+                width: 65%;
                 }
             }
         }
