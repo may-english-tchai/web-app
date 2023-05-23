@@ -1,29 +1,39 @@
-import { NavLink } from 'react-router-dom';
-import "../assets/styles/header.scss";
-import Logo from './Logo';
-
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import "../assets/styles/header.scss"
 
 const Header = () => {
+    const [showLinks, setShowLinks] = useState(false)
+    const handleShowLinks = ()=>{
+        setShowLinks(!showLinks)
+    }
     return (
-        <header className="navigation">
-            <Logo />
-            <ul>
+        <header className="app-header">
+            <div className={`navbar ${showLinks ? "show-nav" : "hide-nav"} `}>
+            <div className="navbar_logo">
+                <img src="/img/logo_english.png" alt="" />
+            </div>
+            <ul className='navbar_links'>
                 <NavLink to="/" className={(nav)=>(nav.isActive ? "nav-active" : "")}>
-                    <li>Accueil</li>
+                    <li className='navbar_list slideInDown-1'>Accueil</li>
                 </NavLink>
                 <NavLink to="/concept" className={(nav)=>(nav.isActive ? "nav-active" : "")}>
-                    <li>Concept</li>
+                    <li className='navbar_list slideInDown-1'>Concept</li>
                 </NavLink>
                 <NavLink to="/reservation" className={(nav)=>(nav.isActive ? "nav-active" : "")}>
-                    <li>Reservation</li>
+                    <li className='navbar_list slideInDown-2'>Reservation</li>
                 </NavLink>
                 <NavLink to="/testimony" className={(nav)=>(nav.isActive ? "nav-active" : "")}>
-                    <li>Temoignage</li>
+                    <li className='navbar_list slideInDown-3'>Temoignage</li>
                 </NavLink>
                 <NavLink to="/contact" className={(nav)=>(nav.isActive ? "nav-active" : "")}>
-                    <li>Contact</li>
+                    <li className='navbar_list slideInDown-4'>Contact</li>
                 </NavLink>
             </ul>
+            <button className='navbar_burger' onClick={handleShowLinks}>
+                <span className="burger_bar"></span>
+            </button>
+        </div>
         </header>
     );
 };
