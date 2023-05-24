@@ -8,8 +8,8 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <>
+
         <Header />
-      
 
       <Routes>
         <Route path='/' element={<HomePage />} />
