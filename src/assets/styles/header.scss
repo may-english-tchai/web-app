@@ -21,9 +21,9 @@ $font-secondary: Inter;
     position: fixed;
 }
 
-
-#logoImage{
-    width: 90px;
+.navbar_logo{
+    left: 0;
+    width: 144px;
 }
 
 .navbar_links{
@@ -101,12 +101,6 @@ $font-secondary: Inter;
         z-index: 2;
         width: 15vh;
         
-    }
-
-    #logoImage{
-        width: 70px;
-        position: fixed;
-        left: 1rem;
     }
 
     .navbar_links{
