@@ -4,6 +4,16 @@ import Logo from './Logo';
 
 
 const Header = () => {
+    // const location = useLocation();
+    // let cssBackground = "/Home"
+    // switch (location.pathname) {
+    //     case "/home":
+            
+    //         break;
+    
+    //     default:
+    //         break;
+    // }
     return (
         <header className="navigation">
             <Logo />
