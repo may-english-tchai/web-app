@@ -11,7 +11,7 @@ const Header = () => {
         <header className="app-header">
             <div className={`navbar ${showLinks ? "show-nav" : "hide-nav"} `}>
             <div className="navbar_logo">
-                <img id='logoImage' src="/img/logo_tchai.png" alt="" />
+                <img id='logoImage' src="/img/Logo_tchai.png" alt="" />
             </div>
             <ul className='navbar_links'>
                 <NavLink to="/" className={(nav)=>(nav.isActive ? "nav-active" : "")}>

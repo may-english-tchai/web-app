@@ -8,9 +8,8 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <>
-      <div style={{backgroundImage: "url('/img/thepicture.png')"}} id="bg">
         <Header />
-      </div>
+      
 
       <Routes>
         <Route path='/' element={<HomePage />} />
