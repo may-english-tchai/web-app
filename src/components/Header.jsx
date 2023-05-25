@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "../assets/styles/header.scss"
 
 const Header = () => {
@@ -11,7 +11,9 @@ const Header = () => {
         <header className="app-header">
             <div className={`navbar ${showLinks ? "show-nav" : "hide-nav"} `}>
             <div className="navbar_logo">
+                <Link to="/">
                 <img id='logoImage' src="/img/Logo_tchai.png" alt="logo" />
+                </Link>
             </div>
             <ul className='navbar_links'>
                 <NavLink to="/" className={(nav)=>(nav.isActive ? "nav-active" : "")}>
