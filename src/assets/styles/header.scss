@@ -16,7 +16,6 @@ $font-secondary: Inter;
     justify-content: space-between;
     z-index: 99;
     height: 5rem;
-    width: 100%;
     background-color: $color-1;
     position: fixed;
 
@@ -163,9 +162,9 @@ $font-secondary: Inter;
 
     .show-nav .navbar_links{
         right:0 ;
-        width: 100vw;
+        width: 100%;
         visibility: visible;
-        
+        height: 100%;
     }
 
     .navbar_list{
