@@ -20,7 +20,7 @@ const Payment = () => {
             </p>
 
             <div className="grid">
-              <Button className="mt-6" type="submit">
+              <Button type="submit">
                 VALIDER
               </Button>
             </div>
