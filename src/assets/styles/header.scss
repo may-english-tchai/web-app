@@ -19,7 +19,6 @@ $font-secondary: Inter;
     width: 100%;
     background-color: $color-1;
     position: fixed;
-
 }
 
 
@@ -55,9 +54,7 @@ $font-secondary: Inter;
         position: absolute;
         border-radius: 10px;
         bottom: 0px;
-        top: 4.1rem;
-        left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(0);
         -webkit-animation: anim 0.3s ease forwards;
         animation: anim 0.6s ease forwards;
 
@@ -107,7 +104,9 @@ $font-secondary: Inter;
     }
 
     #logoImage{
-        width: 100px;
+        width: 70px;
+        position: fixed;
+        left: 1rem;
     }
 
     .navbar_links{
@@ -119,7 +118,6 @@ $font-secondary: Inter;
         right:-100vw ;
         width: 0;
         bottom: 0;
-        
         background-color: white;
         visibility: hidden;
         transition: all .8s ease-in-out;
@@ -193,8 +191,8 @@ $font-secondary: Inter;
     .navbar_burger{
         display: block;
         position: fixed;
-        top: 1rem;
-        right: 1rem;
+        top: 0.8rem;
+        right: 2rem;
     }
 
     .navbar_burger:hover{
