@@ -14,19 +14,19 @@ const Header = () => {
                 <img id='logoImage' src="/img/Logo_tchai.png" alt="logo" />
             </div>
             <ul className='navbar_links'>
-                <NavLink to="/" className={(nav)=>(nav.isActive ? "nav-active" : "")}>
+                <NavLink to="/" className={(nav)=>(nav.isActive ? "nav-active" : "")} onClick={handleShowLinks}>
                     <li className='navbar_list slideInDown-1'>Accueil</li>
                 </NavLink>
-                <NavLink to="/concept" className={(nav)=>(nav.isActive ? "nav-active" : "")}>
+                <NavLink to="/concept" className={(nav)=>(nav.isActive ? "nav-active" : "")} onClick={handleShowLinks}>
                     <li className='navbar_list slideInDown-1'>Concept</li>
                 </NavLink>
-                <NavLink to="/reservation" className={(nav)=>(nav.isActive ? "nav-active" : "")}>
+                <NavLink to="/reservation" className={(nav)=>(nav.isActive ? "nav-active" : "")} onClick={handleShowLinks}>
                     <li className='navbar_list slideInDown-2'>Reservation</li>
                 </NavLink>
-                <NavLink to="/testimony" className={(nav)=>(nav.isActive ? "nav-active" : "")}>
+                <NavLink to="/testimony" className={(nav)=>(nav.isActive ? "nav-active" : "")} onClick={handleShowLinks}>
                     <li className='navbar_list slideInDown-3'>Temoignage</li>
                 </NavLink>
-                <NavLink to="/contact" className={(nav)=>(nav.isActive ? "nav-active" : "")}>
+                <NavLink to="/contact" className={(nav)=>(nav.isActive ? "nav-active" : "")} onClick={handleShowLinks}>
                     <li className='navbar_list slideInDown-4'>Contact</li>
                 </NavLink>
             </ul>
