@@ -4,6 +4,9 @@ import PaymentPage from "./pages/PaymentPage";
 import LoginPage from "./pages/LoginPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Testimony from "./components/Testimony";
+import Reservation from "./components/Reservation";
+import Concept from "./components/Concept";
 
 const App = () => {
   return (
@@ -14,6 +17,9 @@ const App = () => {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/home' element={<HomePage />} />
+        <Route path='/concept' element={<Concept />} />
+        <Route path='/reservation' element={<Reservation />} />
+        <Route path='/testimony' element={<Testimony />} />
         <Route path='/payment' element={<PaymentPage />} />
         <Route path='/login' element={<LoginPage />} />
       </Routes>
