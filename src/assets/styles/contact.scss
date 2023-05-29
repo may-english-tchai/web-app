@@ -1,0 +1,204 @@
+
+
+@font-face {
+  font-family: "Inter";
+  src: url(../../assets/fonts/Inter-Medium.ttf);
+}
+
+$color2: #FD6C9E;
+$font-primary: Merienda;
+$font-secondary: Inter;
+
+#title {
+    font-size: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  hr {
+    width: 30%;
+    border: 1px solid $color2;
+    
+    
+}
+
+#title h2 {
+    margin: 1rem;
+    font-family: $font-primary;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+
+}
+
+#contact-container{
+  background-image:linear-gradient(359.56deg, #FD81AB 0.57%, rgba(217, 217, 217, 0) 25.01%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-family: $font-primary;
+  flex-direction: column;
+  
+}
+
+.contact-box {
+  width: clamp(100px, 90%, 1000px);
+  margin: 100px 50px;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.contact-links,
+.contact-form-wrapper {
+  width: 50%;
+  padding: 8% 5% 10% 5%;
+}
+
+
+@media only screen and (max-width: 800px) {
+
+  .contact-form-wrapper {
+    width: 100%;
+  }
+
+  #title hr {
+    width: 30%;
+    margin: 2.5rem 0.8rem;
+}
+
+  .contact-links {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .contact-form-wrapper {
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .contact-box {
+    width: 95%;
+    margin: 8% 5%;
+  }
+}
+
+h2 {
+  
+  color: #FD6C9E;
+  font-size: clamp(30px, 6vw, 60px);
+
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.link {
+  margin: 10px;
+  cursor: pointer;
+}
+
+
+.form-item {
+  position: relative;
+  margin: 33px;
+  
+}
+
+label,
+input,
+textarea {
+  font-family: "Poppins", sans-serif;
+  
+}
+
+label {
+  position: absolute;
+  left: 3%;
+  color:black;
+  font-size: clamp(14px, 1.5vw, 18px);
+  pointer-events: none;
+  user-select: none;
+}
+
+input,
+textarea {
+  width: 100%;
+  outline: 0;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: clamp(15px, 1.5vw, 18px);
+  background: rgba(235, 196, 209, 0.25);
+}
+
+textarea{
+  margin: 0;
+}
+
+input:focus + label,
+input:valid + label,
+textarea:focus + label,
+textarea:valid + label {
+  font-size: clamp(15px, 1.3vw, 15px);
+  color: black;
+  top: -30px;
+  transition: all 0.225s ease;
+}
+
+.submit-btn {
+  background-color: white;
+  width: 200px;
+  margin: auto;
+  font-size: 15px;
+  display: block;
+  padding: 10px 20px;
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+  font-family:$font-secondary ; 
+}
+
+.submit-btn:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.submit-btn:active {
+  transform: scale(1.1, 1.1);
+  filter: sepia(0.5);
+}
+
+@media only screen and (max-width: 800px) {
+  h2 {
+    font-size: clamp(40px, 10vw, 60px);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  h2 {
+    font-size: clamp(30px, 12vw, 60px);
+  }
+
+  .links {
+    padding-top: 30px;
+  }
+
+  img {
+    width: 38px;
+    height: 38px;
+  }
+}
