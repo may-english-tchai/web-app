@@ -1,0 +1,66 @@
+@font-face {
+    font-family: "Inter";
+    src: url(/fonts/Inter-Medium.ttf);
+}
+@font-face {
+    font-family: "Merienda";
+    src: url(/fonts/Merienda-Bold.ttf);
+}
+
+
+$color2: black;
+$colorSpecial: linear-gradient(45deg, rgba(250, 219, 219, 1), rgba(253, 129, 171, 0.46), rgba(220, 178, 83, 1)) 1;
+$font-primary: Merienda;
+
+
+
+.availability{
+    background-image: url(/img/background_availability.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+    #title{
+        display: flex;
+        justify-content: center;
+        
+    }
+    
+
+    hr {
+        width: 30%;
+        height: 0px;
+        border: 1px solid $color2;
+        margin: 3rem 1rem;
+    }
+
+    h2 {
+        margin: 1rem;
+        font-family: $font-primary;
+        color: $color2;
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #title h2{
+        font-size: 1.8em;
+    }
+    
+
+    hr {
+        width: 30%;
+        margin: 2.5rem 0.8rem;
+    }
+
+
+    
+    
+
+
+}
+
+
+    
+
+
