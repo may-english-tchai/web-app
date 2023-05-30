@@ -9,6 +9,7 @@ import Reservation from "./components/Reservation";
 import Concept from "./components/Concept";
 import Availability from "./components/Availability";
 import Contact from "./components/Contact";
+import Information from "./components/Information";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path='/payment' element={<PaymentPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/availability' element={<Availability />} />
+        <Route path='/information' element={<Information />} />
       </Routes>
 
       <Footer />
