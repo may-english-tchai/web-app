@@ -1,18 +1,22 @@
-import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const location = useLocation('');
-  const [backgroundColor, setBackgroundColor] = useState('');
-  const [logoImage, setLogoImage] = useState('/img/logofooter.png');
+  const location = useLocation("");
+  const [backgroundColor, setBackgroundColor] = useState("");
+  const [logoImage, setLogoImage] = useState("/img/logofooter.png");
 
   useEffect(() => {
     const bgs = {
-      '/': { bgColor: '#FD81AB', logo: '/img/logofooter.png' },
-      '/Payment': { bgColor: '#F0C662', logo: '/img/logofooter2.png' },
+      "/": { bgColor: "#FD81AB", logo: "/img/logofooter.png" },
+      "/Payment": { bgColor: "#F0C662", logo: "/img/logofooter2.png" },
     };
 
-    const pageData = bgs[location.pathname] || { bgColor: '#FD81AB', logo: '/img/logofooter.png' };
+    const pageData = bgs[location.pathname] || {
+      bgColor: "#FD81AB",
+      logo: "/img/logofooter.png",
+    };
 
     setBackgroundColor(pageData.bgColor);
     setLogoImage(pageData.logo);
@@ -39,11 +43,15 @@ const Footer = () => {
       </div>
 
       <div id="footer-menu">
+       
+          <span> 
+            <Link to="/Home">Accueil
+            </Link>
+            </span>
+        
         <span>
-          <a href="/home">Accueil</a>
-        </span>
-        <span>
-          <a href="/concept">Concept</a>
+          <Link to="/Concept">Concept
+          </Link>
         </span>
         <span>
           <a href="/reservation">Reservation</a>
@@ -61,14 +69,10 @@ const Footer = () => {
       </div>
 
       <div>
-        <span id="copyright">
-          ©2023 My English TCHAÏ | All Rights Reserved
-        </span>
+        <span id="copyright">©2023 My English TCHAÏ | All Rights Reserved</span>
       </div>
     </footer>
   );
 };
 
 export default Footer;
-
-
