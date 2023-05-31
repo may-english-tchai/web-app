@@ -43,29 +43,25 @@ const Footer = () => {
       </div>
 
       <div id="footer-menu">
-       
-          <span> 
-            <Link to="/Home">Accueil
-            </Link>
-            </span>
-        
         <span>
-          <Link to="/Concept">Concept
-          </Link>
+          <a href="/Home">Accueil</a>
         </span>
         <span>
-          <a href="/reservation">Reservation</a>
+          <a href="#concept">Concept</a>
         </span>
         <span>
-          <a href="/testimony">Temoignage</a>
+          <a href="#reservation">Reservation</a>
         </span>
         <span>
-          <a href="/contact">Contact</a>
+          <a href="#testimony">Temoignage</a>
+        </span>
+        <span>
+          <Link to="/contact">Contact</Link>
         </span>
       </div>
 
       <div id="logofooter">
-        <img src={logoImage} alt="logofooter" />
+       <Link to="/Home"> <img src={logoImage} alt="logofooter" /></Link>
       </div>
 
       <div>
