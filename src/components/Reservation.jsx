@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import "../assets/styles/reservation.scss";
 
 const Reservation = () => {
