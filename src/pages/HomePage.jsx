@@ -6,10 +6,16 @@ import Join from "../components/Join";
 const HomePage = () => {
   return (
     <>
-      <Join/>
-      <Concept/>
-      <Reservation/>
-      <Testimony/>
+      <Join />
+      <div id="concept">
+        <Concept />
+      </div>
+      <div id="reservation">
+        <Reservation />
+      </div>
+      <div id="testimony">
+        <Testimony />
+      </div>
     </>
   );
 };
