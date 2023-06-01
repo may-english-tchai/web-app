@@ -1,12 +1,12 @@
-import "../assets/styles/information.scss";
 import "../components/elements/Button"
+import Button from "../components/elements/Button";
 
 const Information = () => {
   return (
     <>
-      <div className="Information">
-        <div id="menu-information">
-          <div className="title">
+      <div className="Information flex relative justify-center items-center">
+        <div className="menu-information flex flex-col text-center items-center absolute">
+          <div className="title flex">
             <hr />
             <h2>MAKE YOUR RESERVATION</h2>
             <hr />
@@ -50,7 +50,7 @@ const Information = () => {
                 <option value="C2">C2 - Utilisateur expérimenté</option>
                 
               </select>
-              <button type="submit">VALIDER</button>
+              <Button/>
             </div>
           </form>
         </div>

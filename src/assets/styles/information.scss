@@ -20,27 +20,14 @@
     background-repeat: no-repeat;
     background-position: center center;
     height: 1100px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    
-
-    #menu-information{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        position: absolute;
+    .menu-information{
         width: 1737px;
         height: 787px;
         background: rgba(255, 255, 255, 0.5);
         border-radius: 11px;
     }
-    .title{
-        display: flex;
-    }
+    
     hr{
         width: 350px;
         margin: 25px;
@@ -79,7 +66,7 @@
     }
     @media only screen and (max-width: 800px) {
         height: 900px;
-        #menu-information{
+        .menu-information{
             width: 350px;
             height: 737px;
         }
@@ -107,8 +94,8 @@
         
     }
     @media only screen and (max-width: 400px) {
-        #menu-information{
-            width: 280px;
+        .menu-information{
+            width: 320px;
             height: 737px;
         }
         h2{
