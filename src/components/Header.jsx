@@ -31,6 +31,9 @@ const Header = () => {
                 <NavLink to="/contact" className={(nav)=>(nav.isActive ? "nav-active" : "")} onClick={handleShowLinks}>
                     <li className='navbar_list slideInDown-4'>Contact</li>
                 </NavLink>
+                <NavLink to="/login" className={(nav)=>(nav.isActive ? "nav-active" : "")} onClick={handleShowLinks}>
+                    <li className='navbar_list slideInDown-4'>Login</li>
+                </NavLink>
             </ul>
             <button className='navbar_burger' onClick={handleShowLinks}>
                 <span className="burger_bar"></span>
