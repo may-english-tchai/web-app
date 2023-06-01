@@ -20,36 +20,14 @@
     background-repeat: no-repeat;
     background-position: center center;
     height: 1100px;
-<<<<<<< HEAD
 
     .menu-information{
-=======
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    
-
-    #menu-information{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        position: absolute;
->>>>>>> d907194 (information page designed and integrated)
         width: 1737px;
         height: 787px;
         background: rgba(255, 255, 255, 0.5);
         border-radius: 11px;
     }
-<<<<<<< HEAD
     
-=======
-    .title{
-        display: flex;
-    }
->>>>>>> d907194 (information page designed and integrated)
     hr{
         width: 350px;
         margin: 25px;
@@ -88,11 +66,7 @@
     }
     @media only screen and (max-width: 800px) {
         height: 900px;
-<<<<<<< HEAD
         .menu-information{
-=======
-        #menu-information{
->>>>>>> d907194 (information page designed and integrated)
             width: 350px;
             height: 737px;
         }
@@ -120,13 +94,8 @@
         
     }
     @media only screen and (max-width: 400px) {
-<<<<<<< HEAD
         .menu-information{
             width: 320px;
-=======
-        #menu-information{
-            width: 280px;
->>>>>>> d907194 (information page designed and integrated)
             height: 737px;
         }
         h2{
