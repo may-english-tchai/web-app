@@ -8,6 +8,7 @@ help: ## Outputs this help screen
 
 ## —— Npm server ———————————————————————————————————
 install:
+	@test -f .env.local || cp .env .env.local
 	npm install
 
 dev: install
@@ -27,5 +28,5 @@ rome-check:
 type ?= feat
 commit: lint
 	git add .
-	@git commit -am "${type}: #$(shell git branch --show-current | sed 's/-/ /g')"
+	@git commit -m "${type}: #$(shell git branch --show-current | sed 's/-/ /g')"
 	git push origin "$(GIT_CURRENT_BRANCH)"
