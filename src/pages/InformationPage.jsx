@@ -1,12 +1,11 @@
-
 import Information from "../components/Information";
 
 const InformationPage = () => {
-  return (
-    <>
-      <Information/>
-    </>
-  );
+	return (
+		<>
+			<Information />
+		</>
+	);
 };
 
 export default InformationPage;

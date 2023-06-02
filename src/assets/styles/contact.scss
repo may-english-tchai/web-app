@@ -1,42 +1,40 @@
-
-
 @font-face {
   font-family: "Inter";
   src: url(../../assets/fonts/Inter-Medium.ttf);
 }
 
-$color2: #FD6C9E;
+$color2: #fd6c9e;
 $font-primary: Merienda;
 $font-secondary: Inter;
 
 #title {
-    font-size: 2.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
+  font-size: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  hr {
-    width: 30%;
-    border: 1px solid $color2;
-    
-    
+hr {
+  width: 30%;
+  border: 1px solid $color2;
 }
 
 #title h2 {
-    margin: 1rem;
-    font-family: $font-primary;
+  margin: 1rem;
+  font-family: $font-primary;
 }
 
 .contact {
   display: flex;
   flex-direction: column;
-
 }
 
-#contact-container{
-  background-image:linear-gradient(359.56deg, #FD81AB 0.57%, rgba(217, 217, 217, 0) 25.01%);
+#contact-container {
+  background-image: linear-gradient(
+    359.56deg,
+    #fd81ab 0.57%,
+    rgba(217, 217, 217, 0) 25.01%
+  );
   width: 100%;
   display: flex;
   justify-content: center;
@@ -44,7 +42,6 @@ $font-secondary: Inter;
   align-items: center;
   font-family: $font-primary;
   flex-direction: column;
-  
 }
 
 .contact-box {
@@ -54,17 +51,13 @@ $font-secondary: Inter;
   justify-content: center;
 }
 
-
-
 .contact-links,
 .contact-form-wrapper {
   width: 50%;
   padding: 8% 5% 10% 5%;
 }
 
-
 @media only screen and (max-width: 800px) {
-
   .contact-form-wrapper {
     width: 100%;
   }
@@ -72,7 +65,7 @@ $font-secondary: Inter;
   #title hr {
     width: 30%;
     margin: 2.5rem 0.8rem;
-}
+  }
 
   .contact-links {
     border-radius: 10px 10px 0 0;
@@ -91,10 +84,8 @@ $font-secondary: Inter;
 }
 
 h2 {
-  
-  color: #FD6C9E;
+  color: #fd6c9e;
   font-size: clamp(30px, 6vw, 60px);
-
 }
 
 .links {
@@ -109,24 +100,21 @@ h2 {
   cursor: pointer;
 }
 
-
 .form-item {
   position: relative;
   margin: 33px;
-  
 }
 
 label,
 input,
 textarea {
   font-family: "Poppins", sans-serif;
-  
 }
 
 label {
   position: absolute;
   left: 3%;
-  color:black;
+  color: black;
   font-size: clamp(14px, 1.5vw, 18px);
   pointer-events: none;
   user-select: none;
@@ -144,7 +132,7 @@ textarea {
   background: rgba(235, 196, 209, 0.25);
 }
 
-textarea{
+textarea {
   margin: 0;
 }
 
@@ -170,7 +158,7 @@ textarea:valid + label {
   cursor: pointer;
   user-select: none;
   transition: 0.3s;
-  font-family:$font-secondary ; 
+  font-family: $font-secondary;
 }
 
 .submit-btn:hover {

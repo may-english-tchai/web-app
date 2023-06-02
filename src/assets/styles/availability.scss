@@ -1,179 +1,170 @@
 @font-face {
-    font-family: "Inter-bold";
-    src: url(/fonts/Inter-bold.ttf);
+  font-family: "Inter-bold";
+  src: url(/fonts/Inter-bold.ttf);
 }
 
 @font-face {
-    font-family: "Merienda";
-    src: url(/fonts/Merienda-Bold.ttf);
+  font-family: "Merienda";
+  src: url(/fonts/Merienda-Bold.ttf);
 }
 
-
 $color2: black;
-$colorSpecial: linear-gradient(45deg, rgba(250, 219, 219, 1), rgba(253, 129, 171, 0.46), rgba(220, 178, 83, 1)) 1;
+$colorSpecial: linear-gradient(
+    45deg,
+    rgba(250, 219, 219, 1),
+    rgba(253, 129, 171, 0.46),
+    rgba(220, 178, 83, 1)
+  )
+  1;
 $font-primary: Merienda;
 $font-secondary: Inter-bold;
 
-
-
 .availability {
-    background-image: url(/img/background_availability.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url(/img/background_availability.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+
+  #title {
+    display: flex;
+    justify-content: center;
+  }
+
+  hr {
+    width: 30%;
+    height: 0px;
+    border: 1px solid $color2;
+    margin: 3rem 1rem;
+  }
+
+  h2 {
+    margin: 1rem;
+    font-family: $font-primary;
+    color: $color2;
+  }
+
+  #sous-titre {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: $font-secondary;
+  }
+
+  .box {
+    background-color: white;
+    width: 80%;
+    max-width: 1100px;
+    height: 630px;
+    border: 1px solid rgba(113, 111, 111, 0.8);
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+
+  #scrollable {
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    width: 80%;
+  }
+
+  .box::-webkit-scrollbar {
+    width: 8px;
+    overflow: visible;
+  }
+
+  .box::-webkit-scrollbar-thumb {
+    background-color: #fd81ab;
+    border-radius: 4px;
+  }
+
+  .box::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.56);
+    border-radius: 16px;
+  }
+
+  .card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    background: #ffffff;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    width: 260px;
+    height: 150px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .location {
+    display: flex;
     align-items: center;
-    margin: auto;
+    flex-direction: row;
+  }
 
-    #title {
-        display: flex;
-        justify-content: center;
-    }
+  .location img {
+    margin-left: 8rem;
+  }
 
+  .card:nth-child(3n + 1) {
+    margin-right: auto;
+  }
 
-    hr {
-        width: 30%;
-        height: 0px;
-        border: 1px solid $color2;
-        margin: 3rem 1rem;
-    }
+  .card:nth-child(3n) {
+    margin-left: auto;
+  }
 
-    h2 {
-        margin: 1rem;
-        font-family: $font-primary;
-        color: $color2;
-    }
-
-    #sous-titre {
-        text-align: center;
-        width: 100%;
-        margin-bottom: 20px;
-        font-family: $font-secondary;
-    }
-
-    .box {
-        background-color: white;
-        width: 80%;
-        max-width: 1100px;
-        height: 630px;
-        border: 1px solid rgba(113, 111, 111, 0.8);
-        border-radius: 8px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 1rem;
-        overflow-y: auto;
-
-    }
-
-    #scrollable {
-        display: flex;
-        margin: auto;
-        flex-wrap: wrap;
-        width: 80%;
-    }
-
-    .box::-webkit-scrollbar {
-        width: 8px;
-        overflow: visible;
-    }
-
-
-    .box::-webkit-scrollbar-thumb {
-        background-color: #FD81AB;
-        border-radius: 4px;
-    }
-
-    .box::-webkit-scrollbar-track {
-        background-color: rgba(255, 255, 255, 0.56);
-        border-radius: 16px;
-    }
-
-    .card {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background: #FFFFFF;
-        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
-        border-radius: 4px;
-        width: 260px;
-        height: 150px;
-        margin-bottom: 1rem;
-        padding: 1rem;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .location {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-
-    }
-
-    .location img {
-        margin-left: 8rem;
-    }
-
-    .card:nth-child(3n + 1) {
-        margin-right: auto;
-    }
-
-    .card:nth-child(3n) {
-        margin-left: auto;
-    }
-
-    #availability_button{
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        margin-top: 2%;
-        margin-bottom: 3%;
-    }
-
+  #availability_button {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 3%;
+  }
 }
 
-
-
 @media screen and (max-width: 900px) {
+  hr {
+    margin: 2.5rem 0.8rem;
+  }
 
-    hr {
+  .box {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    overflow-y: auto;
+    flex-wrap: nowrap;
+    margin-bottom: 5%;
+  }
 
-        margin: 2.5rem 0.8rem;
-    }
+  #scrollable {
+    display: flex;
+    align-items: center;
+  }
 
-    .box {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        width: 100%;
-        height: auto;
-        overflow-y: auto;
-        flex-wrap: nowrap;
-        margin-bottom: 5%;
-    }
+  .card {
+    width: 100%;
+    margin: 1rem;
+  }
 
+  .card:not(:last-child) {
+    margin-bottom: 1rem;
+  }
 
-    #scrollable {
-        display: flex;
-        align-items: center;
-    }
-
-
-    .card {
-        width: 100%;
-        margin: 1rem;
-    }
-
-    .card:not(:last-child) {
-        margin-bottom: 1rem;
-    }
-
-    .location img {
-        margin-left: 0;
-        width: 15px;
-    }
-
+  .location img {
+    margin-left: 0;
+    width: 15px;
+  }
 }
