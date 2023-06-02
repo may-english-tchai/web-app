@@ -50,7 +50,7 @@ const Information = () => {
                 <option value="C2">C2 - Utilisateur expérimenté</option>
                 
               </select>
-              <Button/>
+              <Button style={{ backgroundColor: '#FD81AB' }} />
             </div>
           </form>
         </div>
