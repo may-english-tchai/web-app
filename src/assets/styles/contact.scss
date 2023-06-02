@@ -8,20 +8,23 @@ $font-primary: Merienda;
 $font-secondary: Inter;
 
 #title {
-  font-size: 2.5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    font-size: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
 
-hr {
-  width: 30%;
-  border: 1px solid $color2;
+  hr {
+    width: 30%;
+    border: 1px solid $color2;
+    
+    
 }
 
 #title h2 {
-  margin: 1rem;
-  font-family: $font-primary;
+    margin: 1rem;
+    font-family: $font-primary;
 }
 
 .contact {
@@ -65,7 +68,7 @@ hr {
   #title hr {
     width: 30%;
     margin: 2.5rem 0.8rem;
-  }
+}
 
   .contact-links {
     border-radius: 10px 10px 0 0;
@@ -84,8 +87,10 @@ hr {
 }
 
 h2 {
-  color: #fd6c9e;
+  
+  color: #FD6C9E;
   font-size: clamp(30px, 6vw, 60px);
+
 }
 
 .links {
@@ -171,15 +176,11 @@ textarea:valid + label {
 }
 
 @media only screen and (max-width: 800px) {
-  h2 {
-    font-size: clamp(40px, 10vw, 60px);
-  }
+
 }
 
 @media only screen and (max-width: 400px) {
-  h2 {
-    font-size: clamp(30px, 12vw, 60px);
-  }
+
 
   .links {
     padding-top: 30px;

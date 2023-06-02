@@ -21,6 +21,7 @@ $font-secondary: Inter;
   min-height: 76vh;
   font-family: $font-secondary;
 
+<<<<<<< HEAD
   #title {
     display: flex;
     justify-content: center;
@@ -81,11 +82,32 @@ $font-secondary: Inter;
     hr {
       width: 30%;
       margin: 2.5rem 0.8rem;
+=======
+
+    #reservation-container{
+        
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        font-family: $font-primary;
+        flex-direction: column;
+        
+>>>>>>> 1ecd878 (ajout du composant titre sur toute les pages)
     }
 
+
     p {
+<<<<<<< HEAD
       margin: 10px 0px;
       font-size: 1.1em;
+=======
+        margin: 8rem;
+        font-size: 1.5em;
+        line-height: 1.2em;
+        font-family: $font-secondary;
+>>>>>>> 1ecd878 (ajout du composant titre sur toute les pages)
     }
     #pictureReservation {
       margin: 0;
@@ -93,12 +115,29 @@ $font-secondary: Inter;
       max-width: 400px;
     }
     button {
+<<<<<<< HEAD
       width: 150px;
       height: 38px;
       margin-top: 1rem;
+=======
+        
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: $font-secondary;
+        color: $color3;
+        font-size: 25px;
+        margin-top: 9.75rem;
+        width: 279px;
+        height: 63px;
+        background: #FCFCFC;
+        border: 1px solid #243E14;
+        border-radius: 15px;
+>>>>>>> 1ecd878 (ajout du composant titre sur toute les pages)
     }
   }
 
+<<<<<<< HEAD
   @media screen and (max-width: 1026px) {
     p {
       margin: 60px 20px;
@@ -108,6 +147,25 @@ $font-secondary: Inter;
       margin: 0;
       width: 100%;
       max-width: 400px;
+=======
+    @media screen and (max-width: 1026px) {
+        p{
+            margin: 60px 20px;
+            font-size: 1.1em;
+            max-width: 370px;
+        }
+        #pictureReservation{
+            margin: 0;
+            width: 100%;
+            max-width: 370px;
+        }
+        button{
+            width: 150px;
+            height: 38px;
+            margin-top: 6.4rem;
+            max-width: 370px;
+        }
+>>>>>>> 1ecd878 (ajout du composant titre sur toute les pages)
     }
     button {
       width: 150px;
