@@ -29,4 +29,5 @@ type ?= feat
 commit: lint
 	git add .
 	@git commit -m "${type}: #$(shell git branch --show-current | sed 's/-/ /g')"
+	git rebase origin/main
 	git push origin "$(GIT_CURRENT_BRANCH)"
