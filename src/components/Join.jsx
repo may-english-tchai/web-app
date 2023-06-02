@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import "../assets/styles/join.scss";
+import Button from "./elements/Button";
 
 const Join = () => {
+	const navigate = useNavigate();
+	const handleClick = () => {
+		navigate("/availability");
+	};
+
 	return (
 		<div className="Join">
 			<div id="relative">
@@ -14,7 +21,9 @@ const Join = () => {
 						<p id="pThree">
 							APPRENEZ L&apos;ANGLAIS AUTOUR <br /> D&apos;UN CAFE/THE
 						</p>
-						<button type="button">RESERVEZ</button>
+						<Button type="button" onClick={handleClick}>
+							RESERVEZ
+						</Button>
 					</div>
 				</div>
 			</div>

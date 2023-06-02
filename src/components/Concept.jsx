@@ -2,7 +2,7 @@ import "../assets/styles/concept.scss";
 
 const Concept = () => {
 	return (
-		<div className="Concept">
+		<div id="concept" className="Concept">
 			<div id="relative">
 				<div id="pinkdiv">
 					<img src="img/cafe1.png" alt="cafe" />
