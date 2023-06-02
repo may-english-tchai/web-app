@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import PaymentPage from "./pages/PaymentPage";
 import LoginPage from "./pages/LoginPage";
@@ -12,27 +12,26 @@ import Contact from "./components/Contact";
 import Information from "./components/Information";
 
 const App = () => {
-  return (
-    <>
+	return (
+		<>
+			<Header />
 
-        <Header />
+			<Routes>
+				<Route path="/" element={<HomePage />} />
+				<Route path="/home" element={<HomePage />} />
+				<Route path="/concept" element={<Concept />} />
+				<Route path="/reservation" element={<Reservation />} />
+				<Route path="/testimony" element={<Testimony />} />
+				<Route path="/contact" element={<Contact />} />
+				<Route path="/payment" element={<PaymentPage />} />
+				<Route path="/login" element={<LoginPage />} />
+				<Route path="/availability" element={<Availability />} />
+				<Route path="/information" element={<Information />} />
+			</Routes>
 
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/home' element={<HomePage />} />
-        <Route path='/concept' element={<Concept />} />
-        <Route path='/reservation' element={<Reservation />} />
-        <Route path='/testimony' element={<Testimony />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/payment' element={<PaymentPage />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/availability' element={<Availability />} />
-        <Route path='/information' element={<Information />} />
-      </Routes>
-
-      <Footer />
-    </>
-  );
+			<Footer />
+		</>
+	);
 };
 
 export default App;

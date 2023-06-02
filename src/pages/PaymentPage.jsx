@@ -1,11 +1,11 @@
 import Payment from "../components/Payment";
 
 const PaymentPage = () => {
-  return (
-    <>
-      <Payment />
-    </>
-  );
+	return (
+		<>
+			<Payment />
+		</>
+	);
 };
 
 export default PaymentPage;

@@ -1,11 +1,11 @@
 import Availability from "../components/Availability";
 
 const AvailabilityPage = () => {
-    return (
-        <>
-            <Availability />
-        </>
-    );
+	return (
+		<>
+			<Availability />
+		</>
+	);
 };
 
 export default AvailabilityPage;

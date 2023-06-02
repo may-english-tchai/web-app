@@ -2,23 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('header.scss');
-@import url('footer.scss');
-@import url('reservation.scss');
-@import url('testimony.scss');
-@import url('article.scss');
-@import url('join.scss');
-@import url('payment.scss');
-@import url('information.scss');
+@import url("header.scss");
+@import url("footer.scss");
+@import url("reservation.scss");
+@import url("testimony.scss");
+@import url("article.scss");
+@import url("join.scss");
+@import url("payment.scss");
+@import url("information.scss");
 
-*{
-    padding: 0%;
-    margin: 0%;
+* {
+  padding: 0%;
+  margin: 0%;
 }
 body {
   overflow-x: hidden;
 }
 
-button.app-button{
-  background: #EDD8A8;
+button.app-button {
+  background: #edd8a8;
 }

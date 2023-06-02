@@ -1,123 +1,119 @@
-.Concept{
+.Concept {
+  display: flex;
+  @font-face {
+    font-family: "Merienda";
+    src: url(../../assets/fonts/Merienda-Bold.ttf);
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url(../../assets/fonts/Inter-Medium.ttf);
+  }
+  $font-primary: Merienda;
+  $font-secondary: Inter;
+  #pinkdiv {
+    background-color: #fadbdb;
+  }
+  h2 {
+    margin-top: 1px;
+    font-family: Merienda;
+    color: #fd6c9e;
+    font-size: 40px;
     display: flex;
-    @font-face {
-        font-family: "Merienda";
-        src: url(../../assets/fonts/Merienda-Bold.ttf);
-        }
-        @font-face {
-        font-family: "Inter";
-        src: url(../../assets/fonts/Inter-Medium.ttf);
-        }
-        $font-primary: Merienda;
-        $font-secondary: Inter;
-    #pinkdiv{
-        background-color: #FADBDB;
-    }    
-    h2{
-        margin-top: 1px;
-        font-family: Merienda;
-        color: #FD6C9E;
-        font-size: 40px;
-        display: flex;
-        margin-left: 75px;
+    margin-left: 75px;
+  }
+  hr {
+    border: 1px solid #fd81ab;
+    margin: auto;
+    width: 480px;
+  }
+  #presentation {
+    background: rgba(216, 205, 182, 0.14);
+    border: 1px solid #dcb253;
+    border-radius: 8px;
+    width: 1570px;
+    height: 432px;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 480px;
+    top: -0px;
+  }
+  h4 {
+    font-family: Inter;
+    font-size: 40px;
+    color: #d0831c;
+    margin-top: 10px;
+    margin-left: 90px;
+  }
+  p {
+    font-family: Inter;
+    margin-top: 50px;
+    font-size: 24px;
+  }
+  #para {
+    margin: 0 auto;
+    height: 200px;
+    width: 800px;
+  }
+  img {
+    opacity: 0.9;
+  }
+  #relative {
+    display: flex;
+    position: relative;
+  }
+  @media screen and (max-width: 900px) {
+    img {
+      height: 300px;
+      width: 300px;
     }
-    hr{
-        border: 1px solid #FD81AB;
-        margin: auto;
-        width: 480px;
+    #presentation {
+      background: rgba(216, 205, 182, 0.14);
+      border: 1px solid #dcb253;
+      border-radius: 8px;
+      width: 380px;
+      height: 774px;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      left: 5px;
+      top: 0px;
+      margin: 0%;
     }
-    #presentation{
-        background: rgba(216, 205, 182, 0.14);
-        border: 1px solid #DCB253;
-        border-radius: 8px;
-        width: 1570px;
-        height: 432px;
-        margin-top: 25px;
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        left: 480px;
-        top: -0px;
+    #pinkdiv {
+      background: rgba(216, 205, 182, 0.14);
+      margin-top: 475px;
+      margin-left: 45px;
     }
-    h4{
-        font-family: Inter;
-        font-size:40px;
-        color: #D0831C;
-        margin-top: 10px;
-        margin-left: 90px;
+    p {
+      font-family: Inter;
+      margin-top: 48px;
+      font-size: 20px;
     }
-    p{
-        font-family: Inter;
-        margin-top: 50px;
-        font-size: 24px;
-        
+    #para {
+      margin: 0 auto;
+      height: 100px;
+      width: 350px;
     }
-    #para{
-        margin: 0 auto;
-        height: 200px;
-        width: 800px;
+    h4 {
+      font-family: Inter;
+      font-size: 19px;
+      color: #d0831c;
+      margin-top: 10px;
+      margin-left: 9px;
     }
-    img{
-        opacity: 0.9;
+    h2 {
+      font-family: Merienda;
+      color: #fd6c9e;
+      font-size: 35px;
+      display: flex;
+      margin-left: -3px;
+      margin: 10px;
     }
-    #relative{
-        display: flex;
-        position: relative;
+    hr {
+      border: 1px solid #fd81ab;
+      width: 100px;
     }
-    @media screen and (max-width: 900px) {
-        img{
-            height: 300px;
-            width: 300px;
-        }
-        #presentation{
-            background: rgba(216, 205, 182, 0.14);
-            border: 1px solid #DCB253;
-            border-radius: 8px;
-            width: 380px;
-            height: 774px;
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            left: 5px;
-            top: 0px;
-            margin: 0%;
-        }
-        #pinkdiv{
-            background: rgba(216, 205, 182, 0.14);
-            margin-top: 475px;
-            margin-left: 45px;
-        } 
-        p{
-            font-family: Inter;
-            margin-top: 48px;
-            font-size: 20px;
-        }
-        #para{
-            margin: 0 auto;
-            height: 100px;
-            width: 350px;
-        }
-        h4{
-            font-family: Inter;
-            font-size:19px;
-            color: #D0831C;
-            margin-top: 10px;
-            margin-left: 9px;
-        }
-        h2{
-            font-family: Merienda;
-            color: #FD6C9E;
-            font-size: 35px;
-            display: flex;
-            margin-left: -3px;
-            margin: 10px;
-        }
-        hr{
-            border: 1px solid #FD81AB;
-            width: 100px;
-        }
-
-    }
-    
-    
+  }
 }
