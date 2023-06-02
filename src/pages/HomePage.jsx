@@ -7,13 +7,9 @@ const HomePage = () => {
 	return (
 		<>
 			<Join />
-			<div id="concept">
-				<Concept />
-			</div>
-			<div id="reservation">
-				<Reservation />
-			</div>
-			<div id="testimony">
+			<Concept />
+			<Reservation />
+			<div id="">
 				<Testimony />
 			</div>
 		</>

@@ -53,7 +53,9 @@ const Information = () => {
 								</option>
 								<option value="C2">C2 - Utilisateur expérimenté</option>
 							</select>
-							<Button style={{ backgroundColor: "#FD81AB" }} />
+							<Button type="submit" style={{ backgroundColor: "#FD81AB" }}>
+								Valider
+							</Button>
 						</div>
 					</form>
 				</div>

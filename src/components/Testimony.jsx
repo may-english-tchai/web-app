@@ -32,8 +32,9 @@ const Testimony = () => {
 			getData();
 		}
 	};
+
 	return (
-		<div className="testimony">
+		<div id="testimony" className="testimony">
 			<div id="title">
 				<hr /> <h2>TEMOIGNAGE</h2> <hr />
 			</div>
