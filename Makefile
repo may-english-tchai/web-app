@@ -24,10 +24,15 @@ rome-check:
 	npx rome check .
 
 ## —— Git ———————————————————————————————————
+rebase:
+	git rebase origin/main
 
-type ?= feat
-commit: lint
+auto-commit:
 	git add .
 	@git commit -m "${type}: #$(shell git branch --show-current | sed 's/-/ /g')"
-	git rebase origin/main
+
+push:
 	git push origin "$(GIT_CURRENT_BRANCH)"
+
+type ?= feat
+commit: lint auto-commit rebase push
