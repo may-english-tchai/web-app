@@ -8,6 +8,7 @@ help: ## Outputs this help screen
 
 ## —— Npm server ———————————————————————————————————
 install:
+	@test -f .env.local || cp .env .env.local
 	npm install
 
 dev: install
@@ -23,9 +24,15 @@ rome-check:
 	npx rome check .
 
 ## —— Git ———————————————————————————————————
+rebase:
+	git rebase origin/main
+
+auto-commit:
+	git add .
+	@git commit -m "${type}: #$(shell git branch --show-current | sed 's/-/ /g')"
+
+push:
+	git push origin "$(GIT_CURRENT_BRANCH)"
 
 type ?= feat
-commit: lint
-	git add .
-	@git commit -am "${type}: #$(shell git branch --show-current | sed 's/-/ /g')"
-	git push origin "$(GIT_CURRENT_BRANCH)"
+commit: lint auto-commit rebase push

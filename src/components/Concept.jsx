@@ -1,6 +1,9 @@
 import "../assets/styles/concept.scss";
+import { api } from "../store/http";
 
 const Concept = () => {
+	api.get("/languages").then((res) => console.log(res.data));
+
 	return (
 		<div id="concept" className="Concept">
 			<div id="relative">
