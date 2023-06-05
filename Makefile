@@ -29,10 +29,7 @@ git-clean-branches: ## Clean merged branches
 	(git branch --merged | egrep -v "(^\*|main|master|dev)" | xargs git branch -d) || true
 
 git-rebase: ## Rebase current branch
-	git add .
-	git stash
 	git pull --rebase origin main
-	git stash pop
 
 type ?= feat
 message ?= \#$(shell git branch --show-current | sed "s/-/ /g")
