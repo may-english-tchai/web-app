@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 
 const Title = ({ text, textColor, hrColor }) => {
 	return (
@@ -19,6 +19,12 @@ const Title = ({ text, textColor, hrColor }) => {
 			/>
 		</div>
 	);
+};
+
+Title.propTypes = {
+	text: PropTypes.string,
+	textColor: PropTypes.string,
+	hrColor: PropTypes.string,
 };
 
 export default Title;

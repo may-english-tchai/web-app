@@ -1,12 +1,21 @@
 import { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import "../assets/styles/header.scss";
+import { isAuthenticated, logout } from "../store/auth";
 
 const Header = () => {
+	const navigate = useNavigate();
 	const [showLinks, setShowLinks] = useState(false);
 	const handleShowLinks = () => {
 		setShowLinks(!showLinks);
 	};
+
+	const handleLogout = () => {
+		logout();
+		navigate("/home");
+		setShowLinks(false);
+	};
+
 	return (
 		<header className="app-header">
 			<div className={`navbar w-full ${showLinks ? "show-nav" : "hide-nav"} `}>
@@ -51,13 +60,21 @@ const Header = () => {
 					>
 						<li className="navbar_list slideInDown-4">Contact</li>
 					</NavLink>
-					<NavLink
-						to="/login"
-						className={(nav) => (nav.isActive ? "nav-active" : "")}
-						onClick={handleShowLinks}
-					>
-						<li className="navbar_list slideInDown-4">Login</li>
-					</NavLink>
+					{isAuthenticated() ? (
+						<li className="navbar_list slideInDown-4">
+							<button type="button" className="btn-link" onClick={handleLogout}>
+								Déconnexion
+							</button>
+						</li>
+					) : (
+						<NavLink
+							to="/login"
+							className={(nav) => (nav.isActive ? "nav-active" : "")}
+							onClick={handleShowLinks}
+						>
+							<li className="navbar_list slideInDown-4">Connexion</li>
+						</NavLink>
+					)}
 				</ul>
 				<button
 					className="navbar_burger"

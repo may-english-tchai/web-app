@@ -1,13 +1,12 @@
 import { api } from "./http";
 
 const signUp = async (email, password) => {
-	console.log(email, password);
 	return await api
 		.post("/login", { email, password })
 		.then((response) => {
-			console.log(response);
-			const { token } = response.data;
+			const { token /*refresh_token*/ } = response.data;
 			localStorage.setItem("token", token);
+			//localStorage.setItem("refresh_token", token);
 
 			return token;
 		})
@@ -16,7 +15,7 @@ const signUp = async (email, password) => {
 		});
 };
 
-const signIn = ({ email, password, name, surname }) => {
+const signIn = async ({ email, password, name, surname }) => {
 	return async (dispatch) => {
 		dispatch({ type: "SIGNIN_START" });
 		api
@@ -37,11 +36,20 @@ const signIn = ({ email, password, name, surname }) => {
 };
 
 const logout = () => {
-	return async (dispatch) => {
-		dispatch({ type: "LOGOUT_START" });
-		localStorage.removeItem("token");
-		dispatch({ type: "LOGOUT_SUCCESS" });
-	};
+	localStorage.removeItem("token");
+	return true;
 };
 
-export { signUp, signIn, logout };
+const getToken = () => {
+	return localStorage.getItem("token");
+};
+
+const isAuthenticated = () => {
+	return !!localStorage.getItem("token");
+};
+
+/*const getRefreshToken = () => {
+  return localStorage.getItem("refresh_token");
+};*/
+
+export { signUp, signIn, logout, getToken, isAuthenticated };

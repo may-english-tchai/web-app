@@ -28,8 +28,11 @@ git-clean-branches: ## Clean merged branches
 	git remote prune origin
 	(git branch --merged | egrep -v "(^\*|main|master|dev)" | xargs git branch -d) || true
 
-rebase: ## Rebase current branch
+git-rebase: ## Rebase current branch
+	git add .
+	git stash
 	git pull --rebase origin main
+	git stash pop
 
 type ?= feat
 message ?= \#$(shell git branch --show-current | sed "s/-/ /g")
@@ -42,4 +45,4 @@ push: ## Push current branch
 	git push origin "$(current_branch)" --force-with-lease
 
 
-commit: git-clean-branches analyze auto-commit rebase push ## Commit and push
+commit: git-clean-branches analyze auto-commit git-rebase push ## Commit and push

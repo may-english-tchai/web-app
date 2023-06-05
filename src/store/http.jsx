@@ -2,7 +2,7 @@ import axios from "axios";
 
 const config = {
 	baseURL: import.meta.env.VITE_API_URL,
-	timeout: 1000,
+	timeout: 3000,
 	headers: {
 		"Content-Type": "application/json",
 		Accept: "application/json",
