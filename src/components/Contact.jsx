@@ -1,13 +1,12 @@
 import "../assets/styles/contact.scss";
 import Button from "./elements/Button";
+import Title from "./elements/Title";
 
 const Contact = () => {
 	return (
 		<div className="contact">
 			<div id="contact-container" className="h-screen">
-				<div id="title" className="w-full">
-					<hr /> <h2>Contact</h2> <hr />
-				</div>
+				<Title text="Contact" textColor="#FD6C9E" hrColor="#FD6C9E" />
 
 				<div className="contact-box">
 					<form method="post">

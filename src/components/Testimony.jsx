@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "../assets/styles/testimony.scss";
 import axios from "axios";
 import Article from "../assets/styles/article.scss?inline";
+import Title from "./elements/Title";
 
 const Testimony = () => {
 	const [testimonyData, setTestimonyData] = useState([]);
@@ -32,39 +33,39 @@ const Testimony = () => {
 			getData();
 		}
 	};
-
 	return (
-		<div id="testimony" className="testimony">
-			<div id="title">
-				<hr /> <h2>TEMOIGNAGE</h2> <hr />
+		<div className="testimony">
+			<div id="testimony-container" className="h-screen">
+				<Title text="Temoignage" textColor="#FD6C9E" hrColor="#FD6C9E" />
+
+				<ul>
+					{testimonyData
+						.sort((a, b) => b.date - a.date)
+						.map((article) => (
+							<Article key={article.id} article={article} />
+						))}
+				</ul>
+				<form onSubmit={(e) => handleSubmit(e)} action="">
+					<input
+						type="text"
+						placeholder="Name"
+						onChange={(e) => setAuthor(e.target.value)}
+						value={author}
+					/>
+					<textarea
+						style={{
+							border: error
+								? "4px solid red"
+								: "border-image: 1px solid $colorSpecial",
+						}}
+						placeholder="Message"
+						onChange={(e) => setContent(e.target.value)}
+						value={content}
+					/>
+					{error && <p>Veuillez ecrire un minimum de 20 caractère</p>}
+					<input type="submit" value="envoyer" />
+				</form>
 			</div>
-			<ul>
-				{testimonyData
-					.sort((a, b) => b.date - a.date)
-					.map((article) => (
-						<Article key={article.id} article={article} />
-					))}
-			</ul>
-			<form onSubmit={(e) => handleSubmit(e)} action="">
-				<input
-					type="text"
-					placeholder="Name"
-					onChange={(e) => setAuthor(e.target.value)}
-					value={author}
-				/>
-				<textarea
-					style={{
-						border: error
-							? "4px solid red"
-							: "border-image: 1px solid $colorSpecial",
-					}}
-					placeholder="Message"
-					onChange={(e) => setContent(e.target.value)}
-					value={content}
-				/>
-				{error && <p>Veuillez ecrire un minimum de 20 caractère</p>}
-				<input type="submit" value="envoyer" />
-			</form>
 		</div>
 	);
 };

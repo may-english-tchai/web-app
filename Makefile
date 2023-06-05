@@ -32,7 +32,8 @@ auto-commit:
 	@git commit -m "${type}: #$(shell git branch --show-current | sed 's/-/ /g')"
 
 push:
-	git push origin "$(GIT_CURRENT_BRANCH)"
+	git push origin "$(GIT_CURRENT_BRANCH)" --force-with-lease
+	
 
 type ?= feat
 commit: lint auto-commit rebase push
