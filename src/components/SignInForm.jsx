@@ -15,8 +15,8 @@ const Login = () => {
 	};
 
 	return (
-		<div className="flex flex-col justify-center overflow-hidden">
-			<div className="m-auto bg-white rounded-md lg:max-w-xl">
+		<div className="flex flex-col justify-center overflow-hidden h-4/5">
+			<div className="m-auto rounded-md lg:max-w-xl">
 				<h1 className="text-3xl font-semibold text-center text-pink-400 my-36 mb-10">
 					SIGN IN
 				</h1>
@@ -24,7 +24,7 @@ const Login = () => {
 					<div className="mb-10">
 						<label
 							htmlFor="email"
-							className="mb-10 text-sm font-semibold text-gray-800"
+							className="hidden md:block text-sm font-semibold text-gray-800"
 						>
 							Email
 						</label>
@@ -32,13 +32,14 @@ const Login = () => {
 							type="email"
 							name="email"
 							id="email"
-							className=" mb-2 block w-full px-4 py-2 mt-4 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+							placeholder="Email"
+							className="mb-2 block w-full px-4 py-2 mt-4 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
 						/>
 					</div>
 					<div className="mt-10">
 						<label
 							htmlFor="password"
-							className="text-sm mt-6 mr-10 font-semibold text-gray-800"
+							className="hidden md:block text-sm mt-6 mr-10 font-semibold text-gray-800"
 						>
 							Password
 						</label>
@@ -46,7 +47,8 @@ const Login = () => {
 							type="password"
 							name="password"
 							id="password"
-							className=" px-4 py-2 mt-4 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+							placeholder="Password"
+							className="px-4 py-2 mt-4 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
 						/>
 					</div>
 					<a href="#bla" className="text-xs text-purple-600 hover:underline">
