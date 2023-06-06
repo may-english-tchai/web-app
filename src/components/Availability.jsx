@@ -1,6 +1,7 @@
 import "../assets/styles/availability.scss";
 import Button from "./elements/Button";
 import { useState } from "react";
+import Title from "./elements/Title";
 
 const Availability = () => {
 	const [isHover, setIsHover] = useState(false);
@@ -19,21 +20,21 @@ const Availability = () => {
 	};
 
 	return (
-		<div className="availability w-full h-full">
-			<div id="title" className="w-full mt-20">
-				<hr /> <h2>MAKE YOUR RESERVATION</h2> <hr />
+		<div className="availability flex flex-col items-center m-auto w-full h-full">
+			<div className="w-full mt-20">
+				<Title text="MAKE YOUR RESERVATION" textColor="black" hrColor="black" />
 			</div>
 
-			<div className="box">
-				<div id="scrollable">
-					<div id="sous-titre">
-						<h4>Quelles sont vos disponibilités ?</h4>
+			<div className="box flex flex-wrap justify-between w-10/12">
+				<div className="flex m-auto flex-wrap w-10/12">
+					<div className=" text-center  w-full mb-20 ">
+						<h4 id="sous-titre">Quelles sont vos disponibilités ?</h4>
 					</div>
 
-					<div className="card">
+					<div className="card flex flex-col justify-between m-auto">
 						<p>Date</p>
 						<p>Heure</p>
-						<div className="location">
+						<div className="location flex items-center flex-row">
 							<p>Lieu</p>
 							<img src="/img/lieu.png" alt="lieu" />{" "}
 						</div>
@@ -41,7 +42,7 @@ const Availability = () => {
 					</div>
 				</div>
 			</div>
-			<div id="availability_button">
+			<div className="availability_button w-full flex justify-center my-16 ">
 				<Button
 					style={boxStyle}
 					onMouseEnter={handleMouseEnter}
