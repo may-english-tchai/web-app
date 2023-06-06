@@ -18,8 +18,8 @@ $font-secondary: Inter;
 .reservation {
   background-color: $color1;
   width: 100%;
-  min-height: 76vh;
   font-family: $font-secondary;
+
 
   #reservation-container {
     width: 100%;
@@ -37,11 +37,16 @@ $font-secondary: Inter;
     line-height: 1.2em;
     font-family: $font-secondary;
   }
+  #reserver {
+    display: flex;
+    position: relative;
+    margin-left: 1%;
+    margin-bottom: 3%;
+}
 
   #pictureReservation {
-    margin: 0;
-    width: 100%;
-    max-width: 400px;
+    margin-left: 50%;
+    margin-top: 1rem;
   }
 
   button {
