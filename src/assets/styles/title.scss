@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "Merienda";
+  src: url(/fonts/Merienda-Bold.ttf);
+}
+
+$font-primary: Merienda;
+
+.title-font{
+    font-family: $font-primary;
+}
