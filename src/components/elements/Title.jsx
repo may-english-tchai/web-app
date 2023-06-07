@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "../../assets/styles/title.scss";
 
 const Title = ({ text, textColor, hrColor }) => {
 	return (
@@ -10,7 +11,7 @@ const Title = ({ text, textColor, hrColor }) => {
 				className=" w-1/3 border border-solid border-1 m-12 mx-4"
 				style={{ borderColor: hrColor }}
 			/>
-			<h2 className=" m-4 " style={{ color: textColor }}>
+			<h2 className=" m-4 title-font " style={{ color: textColor }}>
 				{text}
 			</h2>
 			<hr

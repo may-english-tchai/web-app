@@ -36,7 +36,7 @@ const Availability = () => {
 						<p>Heure</p>
 						<div className="location flex items-center flex-row">
 							<p>Lieu</p>
-							<img src="/img/lieu.png" alt="lieu" />{" "}
+							<img src="/img/lieu.png" alt="lieu" />
 						</div>
 						<p>Langue</p>
 					</div>
