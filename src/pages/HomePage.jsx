@@ -2,6 +2,7 @@ import Reservation from "../components/Reservation";
 import Testimony from "../components/Testimony";
 import Concept from "../components/Concept";
 import Join from "../components/Join";
+import Contact from "../components/Contact";
 
 const HomePage = () => {
 	return (
@@ -9,9 +10,8 @@ const HomePage = () => {
 			<Join />
 			<Concept />
 			<Reservation />
-			<div id="">
-				<Testimony />
-			</div>
+			<Testimony />
+			<Contact />
 		</>
 	);
 };

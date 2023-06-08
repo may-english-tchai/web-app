@@ -9,7 +9,7 @@ const Join = () => {
 	};
 
 	return (
-		<div className="Join">
+		<div id="join-section" className="Join">
 			<div id="relative">
 				<div style={{ backgroundImage: "url('/img/thepicture.png')" }} id="bg">
 					<div id="para">

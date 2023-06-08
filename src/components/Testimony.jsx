@@ -34,7 +34,7 @@ const Testimony = () => {
 		}
 	};
 	return (
-		<div className="testimony">
+		<div id="testimony-section" className="testimony">
 			<div id="testimony-container" className="h-screen">
 				<Title text="Temoignage" textColor="#FD6C9E" hrColor="#FD6C9E" />
 
