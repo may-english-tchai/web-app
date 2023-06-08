@@ -1,5 +1,6 @@
 .Concept {
   display: flex;
+  justify-content: center;
   @font-face {
     font-family: "Merienda";
     src: url(../../assets/fonts/Merienda-Bold.ttf);
@@ -30,14 +31,11 @@
     background: rgba(216, 205, 182, 0.14);
     border: 1px solid #dcb253;
     border-radius: 8px;
-    width: 1570px;
+    width: 1370px;
     height: 432px;
-    margin-top: 25px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    position: absolute;
-    left: 480px;
-    top: -0px;
   }
   h4 {
     font-family: Inter;
@@ -62,6 +60,7 @@
   #relative {
     display: flex;
     position: relative;
+    
   }
   @media screen and (max-width: 900px) {
     img {
@@ -72,24 +71,25 @@
       background: rgba(216, 205, 182, 0.14);
       border: 1px solid #dcb253;
       border-radius: 8px;
-      width: 380px;
+      width: auto;
       height: 774px;
       display: flex;
       flex-direction: column;
-      position: absolute;
-      left: 5px;
-      top: 0px;
       margin: 0%;
     }
     #pinkdiv {
       background: rgba(216, 205, 182, 0.14);
-      margin-top: 475px;
-      margin-left: 45px;
+      position: absolute;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      top: 390px;
+      left: 30px;
     }
     p {
       font-family: Inter;
       margin-top: 48px;
-      font-size: 20px;
+      font-size: 18px;
     }
     #para {
       margin: 0 auto;
@@ -98,7 +98,7 @@
     }
     h4 {
       font-family: Inter;
-      font-size: 19px;
+      font-size: 16px;
       color: #d0831c;
       margin-top: 10px;
       margin-left: 9px;
@@ -115,5 +115,8 @@
       border: 1px solid #fd81ab;
       width: 100px;
     }
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 10px;
   }
 }
