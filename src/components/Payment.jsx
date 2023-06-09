@@ -22,10 +22,10 @@ const Payment = () => {
 							<br />
 							Veuillez confirmer ces informations avant de procéder au paiement
 						</p>
+						<Button style={{ backgroundColor: "EDD8A8" }} type="submit">
+							VALIDER
+						</Button>
 
-						<div className="grid">
-							<Button type="submit">VALIDER</Button>
-						</div>
 						<div className="horizontal-line" />
 						<div className="vertical-line" />
 						<div id="DivTwo">
