@@ -1,19 +1,31 @@
 import { useState } from "react";
-import { NavLink, Link, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../assets/styles/header.scss";
 import { isAuthenticated, logout } from "../store/auth";
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
-	const navigate = useNavigate();
+	const location = useLocation();
 	const [showLinks, setShowLinks] = useState(false);
+
 	const handleShowLinks = () => {
 		setShowLinks(!showLinks);
 	};
 
 	const handleLogout = () => {
 		logout();
-		navigate("/home");
 		setShowLinks(false);
+	};
+
+	const isSectionActive = (section) => {
+		if (section === "home" && location.pathname === "/") {
+			return true; // Page d'accueil active
+		} else if (location.hash === `#${section}-section`) {
+			return true; // La section correspond à l'emplacement actuel
+		} else if (section === "login" && location.pathname === "/login") {
+			return true; // Page de connexion active
+		}
+		return false;
 	};
 
 	return (
@@ -24,42 +36,73 @@ const Header = () => {
 						<img id="logoImage" src="/img/Logo_tchai.png" alt="logo" />
 					</Link>
 				</div>
+
 				<ul className="navbar_links">
-					<NavLink
-						to="/"
-						className={(nav) => (nav.isActive ? "nav-active" : "")}
-						onClick={handleShowLinks}
-					>
-						<li className="navbar_list slideInDown-1">Accueil</li>
-					</NavLink>
-					<NavLink
-						to="/concept"
-						className={(nav) => (nav.isActive ? "nav-active" : "")}
-						onClick={handleShowLinks}
-					>
-						<li className="navbar_list slideInDown-1">Concept</li>
-					</NavLink>
-					<NavLink
-						to="/reservation"
-						className={(nav) => (nav.isActive ? "nav-active" : "")}
-						onClick={handleShowLinks}
-					>
-						<li className="navbar_list slideInDown-2">Reservation</li>
-					</NavLink>
-					<NavLink
-						to="/testimony"
-						className={(nav) => (nav.isActive ? "nav-active" : "")}
-						onClick={handleShowLinks}
-					>
-						<li className="navbar_list slideInDown-3">Temoignage</li>
-					</NavLink>
-					<NavLink
-						to="/contact"
-						className={(nav) => (nav.isActive ? "nav-active" : "")}
-						onClick={handleShowLinks}
-					>
-						<li className="navbar_list slideInDown-4">Contact</li>
-					</NavLink>
+					<li className="navbar_list slideInDown-1">
+						<HashLink
+							to="/#join-section"
+							smooth
+							offset={-70}
+							duration={500}
+							className={isSectionActive("join") ? "nav-active" : ""}
+							onClick={handleShowLinks}
+						>
+							Accueil
+						</HashLink>
+					</li>
+
+					<li className="navbar_list slideInDown-1">
+						<HashLink
+							to="/concept"
+							smooth
+							offset={-70}
+							duration={500}
+							className={isSectionActive("concept") ? "nav-active" : ""}
+							onClick={handleShowLinks}
+						>
+							Concept
+						</HashLink>
+					</li>
+
+					<li className="navbar_list slideInDown-2">
+						<HashLink
+							to="/#reservation-section"
+							smooth
+							offset={-70}
+							duration={500}
+							className={isSectionActive("reservation") ? "nav-active" : ""}
+							onClick={handleShowLinks}
+						>
+							Reservation
+						</HashLink>
+					</li>
+
+					<li className="navbar_list slideInDown-3">
+						<HashLink
+							to="/#testimony-section"
+							smooth
+							offset={-70}
+							duration={500}
+							className={isSectionActive("testimony") ? "nav-active" : ""}
+							onClick={handleShowLinks}
+						>
+							Temoignage
+						</HashLink>
+					</li>
+
+					<li className="navbar_list slideInDown-4">
+						<HashLink
+							to="/#contact-section"
+							smooth
+							offset={-70}
+							duration={500}
+							className={isSectionActive("contact") ? "nav-active" : ""}
+							onClick={handleShowLinks}
+						>
+							Contact
+						</HashLink>
+					</li>
+
 					{isAuthenticated() ? (
 						<li className="navbar_list slideInDown-4">
 							<button type="button" className="btn-link" onClick={handleLogout}>
@@ -67,15 +110,18 @@ const Header = () => {
 							</button>
 						</li>
 					) : (
-						<NavLink
-							to="/login"
-							className={(nav) => (nav.isActive ? "nav-active" : "")}
-							onClick={handleShowLinks}
+						<li
+							className={`navbar_list slideInDown-4 ${
+								isSectionActive("login") ? "nav-active" : ""
+							}`}
 						>
-							<li className="navbar_list slideInDown-4">Connexion</li>
-						</NavLink>
+							<Link to="/login" onClick={handleShowLinks}>
+								Connexion
+							</Link>
+						</li>
 					)}
 				</ul>
+
 				<button
 					className="navbar_burger"
 					type="button"

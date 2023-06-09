@@ -10,7 +10,7 @@ const Reservation = () => {
 	};
 
 	return (
-		<div className="reservation">
+		<div id="reservation-section" className="reservation">
 			<div id="#reservation-container" className="h-screen">
 				<Title text="Reservation" textColor="#fd6c9e" hrColor="#fd6c9e" />
 

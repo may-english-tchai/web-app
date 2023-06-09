@@ -25,6 +25,7 @@ $font-secondary: Inter;
 .navbar_links {
   display: flex;
   margin: auto;
+  cursor: pointer;
 }
 
 .navbar_list {
@@ -41,6 +42,7 @@ $font-secondary: Inter;
   position: relative;
   display: flex;
   justify-content: center;
+  
 
   &::after {
     content: "";
@@ -51,7 +53,7 @@ $font-secondary: Inter;
     position: absolute;
     border-radius: 10px;
     bottom: 0px;
-    top: 4.1rem;
+    top: 2.3rem;
     transform: translateX(0%);
     -webkit-animation: anim 0.3s ease forwards;
     animation: anim 0.6s ease forwards;

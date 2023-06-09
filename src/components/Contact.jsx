@@ -4,7 +4,7 @@ import Title from "./elements/Title";
 
 const Contact = () => {
 	return (
-		<div className="contact">
+		<div id="contact-section" className="contact">
 			<div id="contact-container" className="h-screen">
 				<Title text="Contact" textColor="#FD6C9E" hrColor="#FD6C9E" />
 
