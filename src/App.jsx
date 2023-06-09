@@ -8,6 +8,7 @@ import Concept from "./components/Concept";
 import Availability from "./components/Availability";
 import Contact from "./components/Contact";
 import Information from "./components/Information";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const App = () => {
 	return (
@@ -23,6 +24,7 @@ const App = () => {
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/availability" element={<Availability />} />
 				<Route path="/information" element={<Information />} />
+				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
 
 			<Footer />
