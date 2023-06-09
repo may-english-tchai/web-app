@@ -110,12 +110,12 @@ const Header = () => {
 							</button>
 						</li>
 					) : (
-						<li
-							className={`navbar_list slideInDown-4 ${
-								isSectionActive("login") ? "nav-active" : ""
-							}`}
-						>
-							<Link to="/login" onClick={handleShowLinks}>
+						<li className="navbar_list slideInDown-4">
+							<Link
+								to="/login"
+								onClick={handleShowLinks}
+								className={isSectionActive("login") ? "nav-active" : ""}
+							>
 								Connexion
 							</Link>
 						</li>
