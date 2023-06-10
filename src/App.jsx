@@ -9,6 +9,8 @@ import Availability from "./components/Availability";
 import Contact from "./components/Contact";
 import Information from "./components/Information";
 import NotFoundPage from "./pages/NotFoundPage";
+import Reservation from "./components/Reservation";
+import Testimony from "./components/Testimony";
 
 const App = () => {
 	return (
@@ -19,6 +21,8 @@ const App = () => {
 				<Route path="/" element={<HomePage />} />
 				<Route path="/home" element={<HomePage />} />
 				<Route path="/concept" element={<Concept />} />
+				<Route path="/reservation" element={<Reservation />} />
+				<Route path="/teimoignage" element={<Testimony />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/payment" element={<PaymentPage />} />
 				<Route path="/login" element={<LoginPage />} />
