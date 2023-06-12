@@ -1,0 +1,23 @@
+.register {
+    @font-face {
+      font-family: "MeriendaBold";
+      src: url(/fonts/Merienda-Bold.ttf);
+    }
+    @font-face {
+      font-family: "InterBold";
+      src: url(/fonts/Inter-Bold.ttf);
+    }
+    h2{
+        font-family: "MeriendaBold";
+        font-size: 25px;
+        margin-bottom: 50px;
+    }
+    label{
+        font-family: "InterBold";
+        font-size: 15px;
+        margin-top: 7px;
+    }
+    button{
+        background-color: #FD81AB;
+    }
+}

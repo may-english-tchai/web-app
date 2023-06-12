@@ -10,7 +10,7 @@ const Footer = () => {
 	useEffect(() => {
 		const bgs = {
 			"/": { bgColor: "#FD81AB", logo: "/img/logofooter.png" },
-			"/payment": { bgColor: "#F0C662", logo: "/img/logofooter2.png" },
+			"/Payment": { bgColor: "#F0C662", logo: "/img/logofooter2.png" },
 		};
 
 		const pageData = bgs[location.pathname] || {
@@ -23,7 +23,7 @@ const Footer = () => {
 	}, [location.pathname]);
 
 	return (
-		<footer style={{ backgroundColor }} className="app-footer mt-5">
+		<footer style={{ backgroundColor }} className="app-footer">
 			<div id="socialnetwork">
 				<span className="photo">
 					<img src="/img/facebookpic.png" alt="fbpic" />
