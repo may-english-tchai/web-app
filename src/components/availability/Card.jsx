@@ -1,11 +1,18 @@
 import PropTypes from "prop-types";
 
-const Card = ({ availability }) => {
+const Card = ({ onClick, availability, selected = false }) => {
 	const start = new Date(availability.start);
 	const restaurant = availability.restaurant;
 
 	return (
-		<div className="card flex flex-col justify-between m-1 w-full rounded bg-white hover:bg-sky-100 p-3 mb-2">
+		<div
+			onClick={onClick}
+			onKeyUp={onClick}
+			onKeyDown={onClick}
+			className={`card flex flex-col justify-between m-1 w-full rounded hover:bg-sky-100 p-3 mb-2 ${
+				selected ? "bg-sky-200" : "bg-white"
+			}`}
+		>
 			<div className="text-center">
 				<p className="font-bold">
 					<time dateTime={start.toISOString()}>
@@ -38,6 +45,8 @@ const Card = ({ availability }) => {
 };
 
 Card.propTypes = {
+	onClick: PropTypes.func,
+	selected: PropTypes.bool,
 	availability: PropTypes.shape({
 		id: PropTypes.string.isRequired,
 		start: PropTypes.string.isRequired,

@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 import Title from "./elements/Title";
 import Card from "./availability/Card";
 import { graphql } from "../store/http";
+import { getAvailability, setAvailability } from "../store/booking";
+import { useNavigate } from "react-router-dom";
 
 const Availability = () => {
-	const [isHover, setIsHover] = useState(false);
+	const navigate = useNavigate();
 	const [availabilities, setAvailabilities] = useState([]);
-
-	const handleMouseEnter = () => setIsHover(true);
-	const handleMouseLeave = () => setIsHover(false);
+	const [selected, setSelected] = useState(getAvailability());
 
 	useEffect(() => {
 		graphql({
@@ -34,10 +34,17 @@ const Availability = () => {
 			const nodes = response.data.data.availabilities.edges.map(
 				(edge) => edge.node,
 			);
-			console.log(nodes);
+
 			setAvailabilities(nodes);
 		});
 	}, []);
+
+	const booking = () => {
+		if (!selected) return alert("Veuillez sélectionner une disponibilité");
+
+		setAvailability(selected);
+		navigate("/payment");
+	};
 
 	return (
 		<div className="availability flex flex-col items-center m-auto w-full h-full">
@@ -51,18 +58,23 @@ const Availability = () => {
 				</div>
 
 				{availabilities.map((availability) => (
-					<Card availability={availability} key={availability.id} />
+					<Card
+						selected={selected && selected.id === availability.id}
+						availability={availability}
+						key={availability.id}
+						onClick={() => {
+							setSelected(availability);
+						}}
+					/>
 				))}
 			</div>
 			<div className="availability_button w-full flex justify-center mt-3 mb-5 ">
 				<Button
+					onClick={booking}
+					className="bg-white hover:bg-[#fd81ab] text-black"
 					style={{
-						backgroundColor: isHover ? "#FD81AB" : "white",
-						color: "black",
 						border: "1px solid black",
 					}}
-					onMouseEnter={handleMouseEnter}
-					onMouseLeave={handleMouseLeave}
 				>
 					Booking
 				</Button>
