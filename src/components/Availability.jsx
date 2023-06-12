@@ -1,23 +1,43 @@
 import "../assets/styles/availability.scss";
 import Button from "./elements/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Title from "./elements/Title";
+import Card from "./availability/Card";
+import { graphql } from "../store/http";
 
 const Availability = () => {
 	const [isHover, setIsHover] = useState(false);
+	const [availabilities, setAvailabilities] = useState([]);
 
-	const handleMouseEnter = () => {
-		setIsHover(true);
-	};
-	const handleMouseLeave = () => {
-		setIsHover(false);
-	};
+	const handleMouseEnter = () => setIsHover(true);
+	const handleMouseLeave = () => setIsHover(false);
 
-	const boxStyle = {
-		backgroundColor: isHover ? "#FD81AB" : "white",
-		color: "black",
-		border: "1px solid black",
-	};
+	useEffect(() => {
+		graphql({
+			query: `query {
+      availabilities {
+        edges {
+          node {
+            id
+            start
+            duration
+            teacher { name surname }
+            status {code label }
+            restaurant { id name }
+            language { id label }
+            participations { totalCount }
+          }
+        }
+      }
+    }`,
+		}).then((response) => {
+			const nodes = response.data.data.availabilities.edges.map(
+				(edge) => edge.node,
+			);
+			console.log(nodes);
+			setAvailabilities(nodes);
+		});
+	}, []);
 
 	return (
 		<div className="availability flex flex-col items-center m-auto w-full h-full">
@@ -28,23 +48,21 @@ const Availability = () => {
 			<div className="box flex flex-wrap justify-between w-10/12">
 				<div className="flex m-auto flex-wrap w-10/12">
 					<div className=" text-center  w-full mb-20 ">
-						<h4 id="sous-titre">Quelles sont vos disponibilités ?</h4>
+						<h4 id="sous-titre">Prochaines disponibilités</h4>
 					</div>
 
-					<div className="card flex flex-col justify-between m-auto">
-						<p>Date</p>
-						<p>Heure</p>
-						<div className="location flex items-center flex-row">
-							<p>Lieu</p>
-							<img src="/img/lieu.png" alt="lieu" />
-						</div>
-						<p>Langue</p>
-					</div>
+					{availabilities.map((availability) => (
+						<Card availability={availability} key={availability.id} />
+					))}
 				</div>
 			</div>
 			<div className="availability_button w-full flex justify-center my-16 ">
 				<Button
-					style={boxStyle}
+					style={{
+						backgroundColor: isHover ? "#FD81AB" : "white",
+						color: "black",
+						border: "1px solid black",
+					}}
 					onMouseEnter={handleMouseEnter}
 					onMouseLeave={handleMouseLeave}
 				>
