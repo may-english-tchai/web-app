@@ -15,9 +15,7 @@ if (localStorage.getItem("token")) {
 
 const api = axios.create(config);
 
-const configGraphq = config;
-configGraphq.baseURL = `${import.meta.env.VITE_API_URL}/graphql`;
-
-const graphql = axios.create(configGraphq);
+const graphql = ({ query, variables = {} }) =>
+	api.post("/graphql", { query, variables });
 
 export { api, graphql };
