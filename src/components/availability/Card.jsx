@@ -1,17 +1,38 @@
 import PropTypes from "prop-types";
 
 const Card = ({ availability }) => {
-	console.log(availability);
+	const start = new Date(availability.start);
+	const restaurant = availability.restaurant;
 
 	return (
-		<div className="card flex flex-col justify-between m-auto">
-			<p>Date</p>
-			<p>Heure</p>
-			<div className="location flex items-center flex-row">
-				<p>Lieu</p>
-				<img src="/img/lieu.png" alt="lieu" />
+		<div className="card flex flex-col justify-between m-1 w-full rounded bg-white hover:bg-sky-100 p-3 mb-2">
+			<div className="text-center">
+				<p className="font-bold">
+					<time dateTime={start.toISOString()}>
+						{start.toLocaleDateString()} à{" "}
+						{start.toLocaleTimeString([], {
+							hour: "2-digit",
+							minute: "2-digit",
+						})}
+					</time>
+				</p>
+				<span className="text-gray-600 text-xs">
+					<i className="fa-solid fa-clock" /> {availability.duration} min
+				</span>
 			</div>
-			<p>{availability.language.label}</p>
+			<p className="text-lg">
+				<i className="fa-solid fa-language" /> {availability.language.label} par{" "}
+				{availability.teacher.name}
+			</p>
+			<div className="items-center flex-row my-1">
+				<p>
+					<i className="fa-solid fa-location-dot" /> {restaurant.name}{" "}
+					<span className="text-gray-500">({restaurant.city})</span>
+				</p>
+				<p className=" text-xs text-gray-600">
+					{restaurant.address}, {restaurant.postcode}
+				</p>
+			</div>
 		</div>
 	);
 };
@@ -32,6 +53,9 @@ Card.propTypes = {
 		restaurant: PropTypes.shape({
 			id: PropTypes.string.isRequired,
 			name: PropTypes.string.isRequired,
+			address: PropTypes.string.isRequired,
+			postcode: PropTypes.string.isRequired,
+			city: PropTypes.string.isRequired,
 		}).isRequired,
 		language: PropTypes.shape({
 			id: PropTypes.string.isRequired,

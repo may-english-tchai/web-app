@@ -23,7 +23,7 @@ const Availability = () => {
             duration
             teacher { name surname }
             status {code label }
-            restaurant { id name }
+            restaurant { id name address postcode city }
             language { id label }
             participations { totalCount }
           }
@@ -45,18 +45,16 @@ const Availability = () => {
 				<Title text="MAKE YOUR RESERVATION" textColor="black" hrColor="black" />
 			</div>
 
-			<div className="box flex flex-wrap justify-between w-10/12">
-				<div className="flex m-auto flex-wrap w-10/12">
-					<div className=" text-center  w-full mb-20 ">
-						<h4 id="sous-titre">Prochaines disponibilités</h4>
-					</div>
-
-					{availabilities.map((availability) => (
-						<Card availability={availability} key={availability.id} />
-					))}
+			<div className="box bg-white rounded p-2 flex flex-wrap justify-between w-11/12">
+				<div className=" text-center w-full mb-2 ">
+					<h4 id="sous-titre">Prochaines disponibilités</h4>
 				</div>
+
+				{availabilities.map((availability) => (
+					<Card availability={availability} key={availability.id} />
+				))}
 			</div>
-			<div className="availability_button w-full flex justify-center my-16 ">
+			<div className="availability_button w-full flex justify-center mt-3 mb-5 ">
 				<Button
 					style={{
 						backgroundColor: isHover ? "#FD81AB" : "white",
