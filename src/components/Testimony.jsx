@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
+import { graphql } from "../store/http";
 import "../assets/styles/testimony.scss";
 import axios from "axios";
-import Article from "../assets/styles/article.scss?inline";
 import Title from "./elements/Title";
 
 const Testimony = () => {
@@ -9,15 +9,40 @@ const Testimony = () => {
 	const [author, setAuthor] = useState("");
 	const [content, setContent] = useState("");
 	const [error, setError] = useState(false);
-	const getData = () => {
-		axios
-			.get("http://localhost:3004/articles")
-			.then((res) => setTestimonyData(res.data));
+
+	const fetchTestimonies = () => {
+		graphql({
+			query: `
+        {
+          testimonies {
+            edges {
+              node {
+                id
+                name
+                subject
+                content
+              }
+            }
+          }
+        }
+      `,
+		})
+			.then((response) => {
+				const testimonies = response.data.data.testimonies.edges.map(
+					(edge) => edge.node,
+				);
+				setTestimonyData(testimonies);
+			})
+			.catch((error) => {
+				console.log("Error fetching testimonies:", error);
+			});
 	};
-	useEffect(() => getData(), []);
+
+	useEffect(() => {
+		fetchTestimonies();
+	}, []);
 
 	const handleSubmit = (e) => {
-		//fonction qui evite le rechargement de page à chaque fois qu'on soumet une requete
 		e.preventDefault();
 		if (content.length < 20) {
 			setError(true);
@@ -30,21 +55,15 @@ const Testimony = () => {
 			setError(false);
 			setAuthor("");
 			setContent("");
-			getData();
+			fetchTestimonies();
 		}
 	};
+
 	return (
 		<div id="testimony-section" className="testimony">
 			<div id="testimony-container" className="h-screen">
 				<Title text="Temoignage" textColor="#FD6C9E" hrColor="#FD6C9E" />
 
-				<ul>
-					{testimonyData
-						.sort((a, b) => b.date - a.date)
-						.map((article) => (
-							<Article key={article.id} article={article} />
-						))}
-				</ul>
 				<form onSubmit={(e) => handleSubmit(e)} action="">
 					<input
 						type="text"
@@ -65,6 +84,15 @@ const Testimony = () => {
 					{error && <p>Veuillez ecrire un minimum de 20 caractère</p>}
 					<input type="submit" value="envoyer" />
 				</form>
+				<ul>
+					{testimonyData.map((testimony) => (
+						<li key={testimony.id}>
+							<h3>{testimony.name}</h3>
+							<p>{testimony.subject}</p>
+							<p>{testimony.content}</p>
+						</li>
+					))}
+				</ul>
 			</div>
 		</div>
 	);
