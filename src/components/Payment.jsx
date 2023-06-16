@@ -1,30 +1,33 @@
 import "../assets/styles/payment.scss";
 import Button from "./elements/Button";
+import Time from "./elements/Time";
+import Title from "./elements/Title";
+import PropTypes from "prop-types";
 
-const Payment = () => {
+const Payment = ({ availability }) => {
 	return (
 		<div className="Payment">
 			<div id="relative">
 				<div style={{ backgroundColor: "#EDD8A8" }} id="divOne">
-					<h2>
-						<hr />
-						PAIEMENT/PAYMENT
-						<hr />
-					</h2>
+					<Title text="PAIEMENT" textColor="black" hrColor="black" />
 					<div id="para">
 						<h3>Récapitulatif - Overview </h3>
+						<h4 className="text-center">{}</h4>
 						<p>
-							Nous sommes ravis de vous aider à apprendre l&apos;anglais autour
-							d&apos;un café lors de notre rencontre confirmée pour :<br />
-							Lundi 25 Mars 2023 à 14h00
-							<br />
-							Lundi 25 March 2023 at 2:00 PM
-							<br />
+							Nous sommes ravis de vous aider à apprendre &quot;
+							{availability.language.label}&quot; autour d&apos;un café au
+							&quot;{availability.restaurant.name}&quot; lors de notre rencontre
+							confirmée pour :<br />
+							<Time datetime={availability.start} />
+						</p>
+						<p>
 							Veuillez confirmer ces informations avant de procéder au paiement
 						</p>
-						<Button style={{ backgroundColor: "EDD8A8" }} type="submit">
-							VALIDER
-						</Button>
+						<div className="text-center">
+							<Button style={{ backgroundColor: "EDD8A8" }} type="submit">
+								VALIDER
+							</Button>
+						</div>
 
 						<div className="horizontal-line" />
 						<div className="vertical-line" />
@@ -45,6 +48,36 @@ const Payment = () => {
 			</div>
 		</div>
 	);
+};
+
+Payment.propTypes = {
+	availability: PropTypes.shape({
+		id: PropTypes.string.isRequired,
+		start: PropTypes.string.isRequired,
+		duration: PropTypes.number.isRequired,
+		teacher: PropTypes.shape({
+			name: PropTypes.string.isRequired,
+			surname: PropTypes.string.isRequired,
+		}).isRequired,
+		status: PropTypes.shape({
+			code: PropTypes.string.isRequired,
+			label: PropTypes.string.isRequired,
+		}).isRequired,
+		restaurant: PropTypes.shape({
+			id: PropTypes.string.isRequired,
+			name: PropTypes.string.isRequired,
+			address: PropTypes.string.isRequired,
+			postcode: PropTypes.string.isRequired,
+			city: PropTypes.string.isRequired,
+		}).isRequired,
+		language: PropTypes.shape({
+			id: PropTypes.string.isRequired,
+			label: PropTypes.string.isRequired,
+		}).isRequired,
+		participations: PropTypes.shape({
+			totalCount: PropTypes.number.isRequired,
+		}).isRequired,
+	}).isRequired,
 };
 
 export default Payment;

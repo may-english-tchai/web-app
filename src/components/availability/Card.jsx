@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Time from "../elements/Time";
 
 const Card = ({ onClick, availability, selected = false }) => {
 	const start = new Date(availability.start);
@@ -15,13 +16,7 @@ const Card = ({ onClick, availability, selected = false }) => {
 		>
 			<div className="text-center">
 				<p className="font-bold">
-					<time dateTime={start.toISOString()}>
-						{start.toLocaleDateString()} à{" "}
-						{start.toLocaleTimeString([], {
-							hour: "2-digit",
-							minute: "2-digit",
-						})}
-					</time>
+					<Time datetime={start} />
 				</p>
 				<span className="text-gray-600 text-xs">
 					<i className="fa-solid fa-clock" /> {availability.duration} min

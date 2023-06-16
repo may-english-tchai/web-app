@@ -45,7 +45,7 @@ const getToken = () => {
 };
 
 const isAuthenticated = () => {
-	return !!localStorage.getItem("token");
+	return localStorage.getItem("token") !== null;
 };
 
 /*const getRefreshToken = () => {
