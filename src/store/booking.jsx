@@ -4,7 +4,11 @@ const setAvailability = (availability) => {
 };
 
 const getAvailability = () => {
-	return JSON.parse(localStorage.getItem("availability"));
+	const availability = JSON.parse(localStorage.getItem("availability"));
+
+	availability.start = new Date(availability.start);
+
+	return availability;
 };
 
 const clearAvailability = () => {
