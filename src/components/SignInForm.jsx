@@ -2,6 +2,7 @@ import Button from "./elements/Button";
 import { signUp } from "../store/auth";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
+import { wait, notifyError } from "../store/auth";
 
 const Login = () => {
 	const navigate = useNavigate();
@@ -18,21 +19,6 @@ const Login = () => {
 			notifyError();
 		}
 	};
-
-	const wait = () => toast.loading("veuillez patienté");
-
-	const notifyError = () =>
-		toast.error("Mot de passe incorrect \n incorrect password", {
-			style: {
-				border: "1px solid red",
-				padding: "10px",
-				color: "red",
-			},
-			iconTheme: {
-				primary: "red",
-				secondary: "#FFFAEE",
-			},
-		});
 
 	return (
 		<div className="flex flex-col justify-center overflow-hidden h-4/5">
