@@ -75,7 +75,11 @@ const Login = () => {
 						Forget Password?
 					</a>
 					<div className="mt-6 justify-items-center">
-						<Toaster />
+						<Toaster
+							containerStyle={{ marginTop: "150px" }}
+							reverseOrder={true}
+						/>
+
 						<Button type="submit" style={{ backgroundColor: "#FD81AB" }}>
 							Se connecter
 						</Button>
