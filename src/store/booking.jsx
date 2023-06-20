@@ -5,7 +5,9 @@ const setAvailability = (availability) => {
 
 const getAvailability = () => {
 	const availability = JSON.parse(localStorage.getItem("availability"));
-
+	if (availability === null) {
+		return null;
+	}
 	availability.start = new Date(availability.start);
 
 	return availability;
@@ -13,6 +15,7 @@ const getAvailability = () => {
 
 const clearAvailability = () => {
 	localStorage.removeItem("availability");
+
 	return true;
 };
 
