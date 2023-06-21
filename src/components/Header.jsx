@@ -53,7 +53,7 @@ const Header = () => {
 
 					<li className="navbar_list slideInDown-1">
 						<HashLink
-							to="/concept"
+							to="/#concept-section"
 							smooth
 							offset={-70}
 							duration={500}
