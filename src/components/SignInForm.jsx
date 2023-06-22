@@ -1,6 +1,8 @@
 import Button from "./elements/Button";
 import { signUp } from "../store/auth";
 import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+import { wait, notifyError } from "../store/auth";
 
 const Login = () => {
 	const navigate = useNavigate();
@@ -8,9 +10,13 @@ const Login = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const { email, password } = e.target.elements;
+		wait();
 		const token = await signUp(email.value, password.value);
+		toast.dismiss();
 		if (token) {
 			return navigate(-1);
+		} else {
+			notifyError();
 		}
 	};
 
@@ -55,6 +61,11 @@ const Login = () => {
 						Forget Password?
 					</a>
 					<div className="mt-6 justify-items-center">
+						<Toaster
+							containerStyle={{ marginTop: "150px" }}
+							reverseOrder={true}
+						/>
+
 						<Button type="submit" style={{ backgroundColor: "#FD81AB" }}>
 							Se connecter
 						</Button>

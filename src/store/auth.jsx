@@ -1,4 +1,20 @@
 import { api } from "./http";
+import { toast } from "react-hot-toast";
+export { wait, notifyError };
+
+const wait = () => toast.loading("Veuillez patienter");
+const notifyError = () =>
+	toast.error("Mot de passe incorrect \n incorrect password", {
+		style: {
+			border: "1px solid red",
+			padding: "10px",
+			color: "red",
+		},
+		iconTheme: {
+			primary: "red",
+			secondary: "#FFFAEE",
+		},
+	});
 
 const signUp = async (email, password) => {
 	return await api
