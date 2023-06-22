@@ -20,7 +20,7 @@
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.11.1",
     "react-router-hash-link": "^2.4.3",
-    "react-scroll": "^1.8.9",
+    "react-ui-scrollspy": "^2.3.0",
     "toast": "^0.5.4"
   },
   "devDependencies": {

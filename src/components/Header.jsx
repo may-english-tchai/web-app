@@ -32,9 +32,9 @@ const Header = () => {
 		<header className="app-header">
 			<div className={`navbar w-full ${showLinks ? "show-nav" : "hide-nav"} `}>
 				<div className="navbar_logo">
-					<Link to="/">
+					<HashLink to="/#join-section">
 						<img id="logoImage" src="/img/Logo_tchai.png" alt="logo" />
-					</Link>
+					</HashLink>
 				</div>
 
 				<ul className="navbar_links">
@@ -105,9 +105,9 @@ const Header = () => {
 
 					{isAuthenticated() ? (
 						<li className="navbar_list slideInDown-4">
-							<button type="button" className="btn-link" onClick={handleLogout}>
+							<HashLink to="/login" className="btn-link" onClick={handleLogout}>
 								Déconnexion
-							</button>
+							</HashLink>
 						</li>
 					) : (
 						<li className="navbar_list slideInDown-4">
