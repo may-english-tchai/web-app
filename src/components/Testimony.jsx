@@ -14,11 +14,12 @@ const Testimony = () => {
 		graphql({
 			query: `
         {
-          testimonies {
+          testimonies(last: 5) {
             edges {
               node {
                 id
                 name
+                createdAt
                 subject
                 content
               }
@@ -42,6 +43,14 @@ const Testimony = () => {
 		fetchTestimonies();
 	}, []);
 
+	const formatDate = (dateString) => {
+		const date = new Date(dateString);
+		const day = date.getDate();
+		const month = date.getMonth() + 1;
+		const year = date.getFullYear();
+		return `${day}/${month}/${year}`;
+	};
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (content.length < 20) {
@@ -61,8 +70,39 @@ const Testimony = () => {
 
 	return (
 		<div id="testimony-section" className="testimony">
-			<div id="testimony-container" className="h-screen">
+			<div id="testimony-container">
 				<Title text="Temoignage" textColor="#FD6C9E" hrColor="#FD6C9E" />
+
+				<div>
+					<ul>
+						<div>
+							<img
+								id="guillemet"
+								src="img/guillemet2.svg"
+								alt="guillemet"
+								className="w-20 h-48 sm:w-20 sm:h-20"
+							/>
+						</div>
+						{testimonyData.map((testimony) => (
+							<li key={testimony.id}>
+								<h3 className="font-bold">{testimony.name}</h3>
+								<p className="text-gray-400 ">
+									{formatDate(testimony.createdAt)}
+								</p>
+								<p>{testimony.subject}</p>
+								<p>{testimony.content}</p>
+								<br />
+							</li>
+						))}
+					</ul>
+					<div className="flex justify-end">
+						<img
+							src="img/guillemet2.svg"
+							alt="guillemet"
+							className="w-20 h-48 sm:w-20 sm:h-20 transform rotate-180"
+						/>
+					</div>
+				</div>
 
 				<form onSubmit={(e) => handleSubmit(e)} action="">
 					<input
@@ -81,18 +121,9 @@ const Testimony = () => {
 						onChange={(e) => setContent(e.target.value)}
 						value={content}
 					/>
-					{error && <p>Veuillez ecrire un minimum de 20 caractère</p>}
+					{error && <p>Veuillez écrire un minimum de 20 caractères</p>}
 					<input type="submit" value="envoyer" />
 				</form>
-				<ul>
-					{testimonyData.map((testimony) => (
-						<li key={testimony.id}>
-							<h3>{testimony.name}</h3>
-							<p>{testimony.subject}</p>
-							<p>{testimony.content}</p>
-						</li>
-					))}
-				</ul>
 			</div>
 		</div>
 	);
