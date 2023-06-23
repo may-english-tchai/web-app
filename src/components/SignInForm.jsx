@@ -14,7 +14,10 @@ const Login = () => {
 		const token = await signUp(email.value, password.value);
 		toast.dismiss();
 		if (token) {
-			return navigate(-1);
+			toast.success("Connexion réussie !");
+			setTimeout(() => {
+				navigate(-1);
+			}, 2000); // Pause de 1 seconde avant de rafraîchir la page
 		} else {
 			notifyError();
 		}
