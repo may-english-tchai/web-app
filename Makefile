@@ -31,11 +31,10 @@ git-clean-branches: ## Clean merged branches
 git-rebase: ## Rebase current branch
 	git pull --rebase origin main
 
-type ?= feat
-message ?= \#$(shell git branch --show-current | sed "s/-/ /g")
+message ?= \#$(shell git branch --show-current | sed -E 's/^([0-9]+)-([^-]+)-(.+)/\2: #\1 \3/' | sed "s/-/ /g")
 auto-commit: ## Auto commit
 	git add .
-	@git commit -m "${type}: ${message}" || true
+	@git commit -m "${message}" || true
 
 current_branch=$(shell git rev-parse --abbrev-ref HEAD)
 push: ## Push current branch
