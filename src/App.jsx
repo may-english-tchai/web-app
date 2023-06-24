@@ -4,7 +4,7 @@ import PaymentPage from "./pages/PaymentPage";
 import LoginPage from "./pages/LoginPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import AvailabilityPage from "./components/AvailabilityPage";
+import AvailabilityPage from "./pages/AvailabilityPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import RegisterPage from "./pages/RegisterPage";
 import InformationPage from "./pages/InformationPage";
