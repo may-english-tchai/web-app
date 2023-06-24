@@ -32,7 +32,7 @@ git-rebase: ## Rebase current branch
 	git pull --rebase origin main
 
 type ?= feat
-message ?= \#$(shell git branch --show-current | sed -E 's/^([0-9]+)-([^-]+)-(.+)/\2: #\1 \3/' )
+message ?= \#$(shell git branch --show-current | sed -E 's/^([0-9]+)-([^-]+)-(.+)/\2: #\1 \3/' | sed s/-/ /g)
 auto-commit: ## Auto commit
 	git add .
 	@git commit -m "${message}" || true
