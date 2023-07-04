@@ -3,7 +3,6 @@ import Button from "./elements/Button";
 import Time from "./elements/Time";
 import Title from "./elements/Title";
 import PropTypes from "prop-types";
-import StripeContainer from "../stripe/StripeContainer";
 
 const Payment = ({ availability }) => {
 	return (
@@ -33,7 +32,11 @@ const Payment = ({ availability }) => {
 						<div className="horizontal-line" />
 						<div className="vertical-line" />
 						<div id="DivTwo">
-							<StripeContainer />
+							<p> Tout les moyens de paiement</p>
+							<p>Espece :</p>
+							<p>Carte Bleue :</p>
+							<p>Paypal :</p>
+							<p>Autres:</p>
 						</div>
 					</div>
 					<div
