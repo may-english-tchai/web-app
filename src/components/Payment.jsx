@@ -24,9 +24,11 @@ const Payment = ({ availability }) => {
 							Veuillez confirmer ces informations avant de procéder au paiement
 						</p>
 						<div className="text-center">
-							<Button style={{ backgroundColor: "EDD8A8" }} type="submit">
-								VALIDER
-							</Button>
+							<form action="/checkout.php" method="POST">
+								<Button style={{ backgroundColor: "EDD8A8" }} type="submit">
+									VALIDER
+								</Button>
+							</form>
 						</div>
 
 						<div className="horizontal-line" />
