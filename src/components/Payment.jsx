@@ -33,7 +33,13 @@ const Payment = ({ availability }) => {
 
 						<div className="horizontal-line" />
 						<div className="vertical-line" />
-						<div id="DivTwo" />
+						<div id="DivTwo">
+							<p> Tout les moyens de paiement</p>
+							<p>Espece :</p>
+							<p>Carte Bleue :</p>
+							<p>Paypal :</p>
+							<p>Autres:</p>
+						</div>
 					</div>
 					<div
 						style={{ backgroundImage: "url('/img/discussion2.png')" }}
