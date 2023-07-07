@@ -12,7 +12,7 @@ const PaymentForm = () => {
 		api
 			.post(`/participations/checkout/${id_availability}`, {})
 			.then((response) => {
-				window.location.href = response.url;
+				window.open(response.data.url, "_self");
 			})
 			.catch((error) => {
 				console.log(error);
