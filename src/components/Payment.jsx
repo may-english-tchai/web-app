@@ -1,8 +1,8 @@
 import "../assets/styles/payment.scss";
-import Button from "./elements/Button";
 import Time from "./elements/Time";
 import Title from "./elements/Title";
 import PropTypes from "prop-types";
+import PaymentForm from "./payment/PaymentForm";
 
 const Payment = ({ availability }) => {
 	return (
@@ -24,11 +24,7 @@ const Payment = ({ availability }) => {
 							Veuillez confirmer ces informations avant de procéder au paiement
 						</p>
 						<div className="text-center">
-							<form action="/checkout.php" method="POST">
-								<Button style={{ backgroundColor: "EDD8A8" }} type="submit">
-									VALIDER
-								</Button>
-							</form>
+							<PaymentForm />
 						</div>
 
 						<div className="horizontal-line" />
