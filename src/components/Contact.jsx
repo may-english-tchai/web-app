@@ -43,17 +43,17 @@ const Contact = () => {
 					<form onSubmit={handleSubmit} method="post">
 						<div className="form-item">
 							<input id="name" type="text" name="sender" required />
-							<label htmlFor="name">Name</label>
+							<label htmlFor="name">Nom</label>
 						</div>
 
 						<div className="form-item">
 							<input id="email" type="text" name="email" required />
-							<label htmlFor="email">Email</label>
+							<label htmlFor="email">E-mail</label>
 						</div>
 
 						<div className="form-item">
 							<input id="phone" type="text" name="sender" required />
-							<label htmlFor="phone">Phone</label>
+							<label htmlFor="phone">Téléphone</label>
 						</div>
 
 						<div className="form-item">
@@ -69,7 +69,7 @@ const Contact = () => {
 
 						<div className="form-item">
 							<Button type="submit" className="submit-btn">
-								Send
+								Envoyer
 							</Button>
 						</div>
 					</form>
