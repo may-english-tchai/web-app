@@ -22,6 +22,18 @@ const Card = ({ onClick, availability, selected = false }) => {
 					<i className="fa-solid fa-clock" /> {availability.duration} min
 				</span>
 			</div>
+			<div>
+				<span className="float-left">
+					{new Intl.NumberFormat("de-DE", {
+						style: "currency",
+						currency: "EUR",
+					}).format(availability.price)}
+				</span>
+				<span className="float-right">
+					<i className="fa-solid fa-users" />{" "}
+					{availability.participations.totalCount} / {availability.capacity}
+				</span>
+			</div>
 			<p className="text-lg">
 				<i className="fa-solid fa-language" /> {availability.language.label} par{" "}
 				{availability.teacher.name}
@@ -68,6 +80,8 @@ Card.propTypes = {
 		participations: PropTypes.shape({
 			totalCount: PropTypes.number.isRequired,
 		}).isRequired,
+		price: PropTypes.number.isRequired,
+		capacity: PropTypes.number.isRequired,
 	}).isRequired,
 };
 

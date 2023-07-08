@@ -21,6 +21,8 @@ const Availability = () => {
             id
             start
             duration
+            price
+            capacity
             teacher { name surname }
             status {code label }
             restaurant { id name address postcode city }
