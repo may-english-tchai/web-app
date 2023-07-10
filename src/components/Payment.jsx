@@ -11,7 +11,7 @@ const Payment = ({ availability }) => {
 				<div style={{ backgroundColor: "#EDD8A8" }} id="divOne">
 					<Title text="PAIEMENT" textColor="black" hrColor="black" />
 					<div id="para">
-						<h3>Récapitulatif - Overview </h3>
+						<h3 className="text-center">Récapitulatif</h3>
 						<h4 className="text-center">{}</h4>
 						<p>
 							Nous sommes ravis de vous aider à apprendre &quot;
@@ -51,7 +51,7 @@ const Payment = ({ availability }) => {
 Payment.propTypes = {
 	availability: PropTypes.shape({
 		id: PropTypes.string.isRequired,
-		start: PropTypes.string.isRequired,
+		start: PropTypes.any.isRequired,
 		duration: PropTypes.number.isRequired,
 		teacher: PropTypes.shape({
 			name: PropTypes.string.isRequired,

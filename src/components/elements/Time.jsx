@@ -1,6 +1,10 @@
 import PropTypes from "prop-types";
 
 const Time = ({ datetime }) => {
+	if (datetime instanceof Date === false) {
+		datetime = new Date(datetime);
+	}
+
 	return (
 		<time dateTime={datetime.toISOString()}>
 			{datetime.toLocaleDateString()} à{" "}
@@ -13,7 +17,7 @@ const Time = ({ datetime }) => {
 };
 
 Time.propTypes = {
-	datetime: PropTypes.object,
+	datetime: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
 };
 
 export default Time;

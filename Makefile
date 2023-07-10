@@ -41,4 +41,4 @@ push: ## Push current branch
 	git push origin "$(current_branch)" --force-with-lease
 
 
-commit: git-clean-branches analyze auto-commit git-rebase push ## Commit and push
+commit: analyze auto-commit git-rebase push ## Commit and push

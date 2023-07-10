@@ -1,5 +1,6 @@
 import { api } from "./http";
 import { toast } from "react-hot-toast";
+import TokenStore from "./token";
 export { wait, notifyError };
 
 const wait = () => toast.loading("Veuillez patienter");
@@ -20,14 +21,15 @@ const signUp = async (email, password) => {
 	return await api
 		.post("/login", { email, password })
 		.then((response) => {
-			const { token /*refresh_token*/ } = response.data;
-			localStorage.setItem("token", token);
-			//localStorage.setItem("refresh_token", token);
+			const { token, refresh_token } = response.data;
+			TokenStore.setToken(token);
+			TokenStore.setRefreshToken(refresh_token);
 
 			return token;
 		})
 		.catch((error) => {
 			console.log(error);
+			toast.error("Une erreur est survenue lors de la connexion");
 		});
 };
 
@@ -52,20 +54,13 @@ const signIn = async ({ email, password, name, surname }) => {
 };
 
 const logout = () => {
-	localStorage.removeItem("token");
+	TokenStore.removeToken();
+	TokenStore.removeRefreshToken();
 	return true;
 };
 
-const getToken = () => {
-	return localStorage.getItem("token");
-};
-
 const isAuthenticated = () => {
-	return localStorage.getItem("token") !== null;
+	return TokenStore.tokenIsValid();
 };
 
-/*const getRefreshToken = () => {
-  return localStorage.getItem("refresh_token");
-};*/
-
-export { signUp, signIn, logout, getToken, isAuthenticated };
+export { signUp, signIn, logout, isAuthenticated };
