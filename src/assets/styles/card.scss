@@ -1,0 +1,17 @@
+.card.disabled {
+    background-color: grey;
+    pointer-events: none; 
+  }
+  
+  .card.disabled:hover {
+    background-color: grey;
+    cursor: not-allowed; 
+  }
+
+  .selected {
+    background-color: rgb(224 242 254);
+  }
+
+  .card:hover{
+    cursor: pointer;
+  }
