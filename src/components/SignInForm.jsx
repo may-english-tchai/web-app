@@ -3,7 +3,6 @@ import { signUp } from "../store/auth";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { wait, notifyError } from "../store/auth";
-import "../assets/styles/signInForm.scss";
 
 const Login = () => {
 	const navigate = useNavigate();
