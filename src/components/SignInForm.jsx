@@ -3,6 +3,7 @@ import { signUp } from "../store/auth";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { wait, notifyError } from "../store/auth";
+import "../assets/styles/signInForm.scss";
 
 const Login = () => {
 	const navigate = useNavigate();
@@ -24,7 +25,7 @@ const Login = () => {
 	};
 
 	return (
-		<div className="flex flex-col justify-center overflow-hidden h-4/5">
+		<div className="signinform flex flex-col justify-center overflow-hidden h-4/5">
 			<div className="m-auto rounded-md lg:max-w-xl">
 				<h1 className="text-3xl font-semibold text-center text-pink-400 my-36 mb-10">
 					SIGN IN
