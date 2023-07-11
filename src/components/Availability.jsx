@@ -6,6 +6,7 @@ import Card from "./availability/Card";
 import { graphql } from "../store/http";
 import { getAvailability, setAvailability } from "../store/booking";
 import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 const Availability = () => {
 	const navigate = useNavigate();
@@ -15,9 +16,9 @@ const Availability = () => {
 	useEffect(() => {
 		graphql({
 			query: `query {
-      availabilities {
+		availabilities {
         edges {
-          node {
+        node {
             id
             start
             duration
@@ -28,9 +29,9 @@ const Availability = () => {
             restaurant { id name address postcode city }
             language { id label }
             participations { totalCount }
-          }
         }
-      }
+        }
+    }
     }`,
 		}).then((response) => {
 			const nodes = response.data.data.availabilities.edges.map(
@@ -43,9 +44,23 @@ const Availability = () => {
 
 	const booking = () => {
 		if (!selected) return alert("Veuillez sélectionner une disponibilité");
-
-		setAvailability(selected);
-		navigate("/payment");
+		graphql({
+			query: `query {availability(id:"${selected.id}"){
+				capacity
+				participations{totalCount}
+			}}`,
+		}).then((response) => {
+			const availability = response.data.data.availability;
+			if (availability.participations.totalCount >= availability.capacity) {
+				toast.error(
+					"Malheureusement ce cours est déjà complet\n Veuillez choisir un autre créneau",
+				);
+				navigate(-1);
+				return;
+			}
+			setAvailability(selected);
+			navigate("/payment");
+		});
 	};
 
 	return (
@@ -53,6 +68,18 @@ const Availability = () => {
 			<div className="w-full mt-20">
 				<Title text="MAKE YOUR RESERVATION" textColor="black" hrColor="black" />
 			</div>
+
+			<Toaster
+				toastOptions={{
+					style: {
+						border: "3px solid red",
+						padding: "16px",
+						color: "red",
+						fontStyle: "bold",
+					},
+				}}
+				reverseOrder={true}
+			/>
 
 			<div className="box bg-white rounded p-2 flex flex-wrap justify-between w-11/12">
 				<div className=" text-center w-full mb-2 ">
