@@ -1,17 +1,38 @@
 import PropTypes from "prop-types";
 import Time from "../elements/Time";
+import "../../assets/styles/card.scss";
+import { useEffect, useState } from "react";
 
 const Card = ({ onClick, availability, selected = false }) => {
 	const start = new Date(availability.start);
 	const restaurant = availability.restaurant;
+	const capacityReached =
+		availability.participations.totalCount >= availability.capacity;
+	const cardClass = capacityReached ? "card disabled" : "card";
+	const [cardSelected, setCardSelected] = useState(selected);
+
+	useEffect(() => {
+		setCardSelected(selected);
+	}, [selected]);
+
+	const handleClick = () => {
+		if (!capacityReached) {
+			setCardSelected(!cardSelected);
+			onClick();
+		}
+	};
+
+	const clickHandler = capacityReached ? null : handleClick;
+	const keyUpHandler = capacityReached ? null : handleClick;
+	const keyDownHandler = capacityReached ? null : handleClick;
 
 	return (
 		<div
-			onClick={onClick}
-			onKeyUp={onClick}
-			onKeyDown={onClick}
-			className={`card flex flex-col justify-between m-1 w-full rounded hover:bg-sky-100 p-3 mb-2 ${
-				selected ? "bg-sky-200" : "bg-white"
+			onClick={clickHandler}
+			onKeyUp={keyUpHandler}
+			onKeyDown={keyDownHandler}
+			className={`card flex flex-col justify-between m-1 w-full rounded hover:bg-sky-100 p-3 mb-2 ${cardClass}${
+				cardSelected && !capacityReached ? " selected" : ""
 			}`}
 		>
 			<div className="text-center">
@@ -82,6 +103,7 @@ Card.propTypes = {
 		}).isRequired,
 		price: PropTypes.number.isRequired,
 		capacity: PropTypes.number.isRequired,
+		maxCapacity: PropTypes.number.isRequired,
 	}).isRequired,
 };
 
