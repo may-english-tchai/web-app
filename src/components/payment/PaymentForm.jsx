@@ -1,12 +1,12 @@
 import { toast } from "react-hot-toast";
-import { getAvailability } from "../../store/booking";
+import { BookingStore } from "../../store/booking";
 import { api } from "../../store/http";
 import Button from "../elements/Button";
 
 const PaymentForm = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const id_availability = getAvailability().id.replace(
+		const id_availability = BookingStore.getAvailability().id.replace(
 			"/api/availabilities/",
 			"",
 		);
