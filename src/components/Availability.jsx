@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import Title from "./elements/Title";
 import Card from "./availability/Card";
 import { graphql } from "../store/http";
-import { getAvailability, setAvailability } from "../store/booking";
+import { BookingStore } from "../store/booking";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 
 const Availability = () => {
 	const navigate = useNavigate();
 	const [availabilities, setAvailabilities] = useState([]);
-	const [selected, setSelected] = useState(getAvailability());
+	const [selected, setSelected] = useState(BookingStore.getAvailability());
 
 	useEffect(() => {
 		graphql({
@@ -58,7 +58,7 @@ const Availability = () => {
 				navigate(-1);
 				return;
 			}
-			setAvailability(selected);
+			BookingStore.setAvailability(selected);
 			navigate("/payment");
 		});
 	};

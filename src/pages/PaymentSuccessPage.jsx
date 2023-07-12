@@ -1,6 +1,6 @@
 import PaymentSuccessful from "../components/payment/PaymentSuccessful";
 
-const SuccessfulPage = () => {
+const PaymentSuccessPage = () => {
 	return (
 		<>
 			<PaymentSuccessful />
@@ -8,4 +8,4 @@ const SuccessfulPage = () => {
 	);
 };
 
-export default SuccessfulPage;
+export default PaymentSuccessPage;

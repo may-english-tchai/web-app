@@ -1,22 +1,31 @@
-const setAvailability = (availability) => {
-	localStorage.setItem("availability", JSON.stringify(availability));
-	return true;
-};
+class BookingStore {
+	static AVAILIBILITY_KEY = "availability";
 
-const getAvailability = () => {
-	const availability = JSON.parse(localStorage.getItem("availability"));
-	if (availability === null) {
-		return null;
+	static setAvailability(availability) {
+		localStorage.setItem(this.AVAILIBILITY_KEY, JSON.stringify(availability));
+		return this;
 	}
-	availability.start = new Date(availability.start);
 
-	return availability;
-};
+	static fetchAvailability() {
+		return this.availability;
+	}
 
-const clearAvailability = () => {
-	localStorage.removeItem("availability");
+	static getAvailability() {
+		const availability = JSON.parse(
+			localStorage.getItem(this.AVAILIBILITY_KEY),
+		);
+		if (availability === null) {
+			return null;
+		}
+		availability.start = new Date(availability.start);
 
-	return true;
-};
+		return availability;
+	}
 
-export { setAvailability, getAvailability, clearAvailability };
+	static clearAvailability() {
+		localStorage.removeItem(this.AVAILIBILITY_KEY);
+		return this;
+	}
+}
+
+export { BookingStore };

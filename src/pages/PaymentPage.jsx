@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Payment from "../components/Payment";
 import { isAuthenticated } from "../store/auth";
-import { getAvailability } from "../store/booking";
+import { BookingStore } from "../store/booking";
 import { useEffect } from "react";
 
 const PaymentPage = () => {
@@ -13,7 +13,7 @@ const PaymentPage = () => {
 		}
 	}, [navigate]);
 
-	const availability = getAvailability();
+	const availability = BookingStore.getAvailability();
 
 	return (
 		<>
