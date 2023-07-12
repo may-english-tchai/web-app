@@ -8,6 +8,7 @@ import AvailabilityPage from "./pages/AvailabilityPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import RegisterPage from "./pages/RegisterPage";
 import InformationPage from "./pages/InformationPage";
+import SuccessfulPage from "./pages/SuccessfulPage";
 
 const App = () => {
 	return (
@@ -22,6 +23,7 @@ const App = () => {
 				<Route path="/information" element={<InformationPage />} />
 				<Route path="/availability" element={<AvailabilityPage />} />
 				<Route path="/register" element={<RegisterPage />} />
+				<Route path="/SuccessfulPage" element={<SuccessfulPage />} />
 				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
 
