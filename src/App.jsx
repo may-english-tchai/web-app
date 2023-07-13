@@ -9,6 +9,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import RegisterPage from "./pages/RegisterPage";
 import InformationPage from "./pages/InformationPage";
 import PaymentSuccessPage from "./pages/PaymentSuccessPage";
+import FailedPaymentPage from "./pages/FailedPaymentPage";
 
 const App = () => {
 	return (
@@ -25,6 +26,7 @@ const App = () => {
 				<Route path="/register" element={<RegisterPage />} />
 				<Route path="/payment-success/:id?" element={<PaymentSuccessPage />} />
 				<Route path="*" element={<NotFoundPage />} />
+				<Route path="/payment-failed/:id?" element={<FailedPaymentPage />} />
 			</Routes>
 
 			<Footer />
