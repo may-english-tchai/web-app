@@ -104,11 +104,23 @@ const Header = () => {
 					</li>
 
 					{isAuthenticated() ? (
-						<li className="navbar_list slideInDown-4">
-							<HashLink to="/login" className="btn-link" onClick={handleLogout}>
-								Déconnexion
-							</HashLink>
-						</li>
+						<>
+							<li className="navbar_list slideInDown-4">
+								<HashLink to="/profile" className="btn-link">
+									Profile
+								</HashLink>
+							</li>
+
+							<li className="navbar_list slideInDown-4">
+								<HashLink
+									to="/login"
+									className="btn-link"
+									onClick={handleLogout}
+								>
+									Déconnexion
+								</HashLink>
+							</li>
+						</>
 					) : (
 						<li className="navbar_list slideInDown-4">
 							<Link

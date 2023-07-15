@@ -6,7 +6,7 @@ import Card from "./availability/Card";
 import { graphql } from "../store/http";
 import { BookingStore } from "../store/booking";
 import { useNavigate } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const Availability = () => {
 	const navigate = useNavigate();
@@ -68,18 +68,6 @@ const Availability = () => {
 			<div className="w-full mt-20">
 				<Title text="MAKE YOUR RESERVATION" textColor="black" hrColor="black" />
 			</div>
-
-			<Toaster
-				toastOptions={{
-					style: {
-						border: "3px solid red",
-						padding: "16px",
-						color: "red",
-						fontStyle: "bold",
-					},
-				}}
-				reverseOrder={true}
-			/>
 
 			<div className="box bg-white rounded p-2 flex flex-wrap justify-between w-11/12">
 				<div className=" text-center w-full mb-2 ">

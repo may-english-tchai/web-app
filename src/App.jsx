@@ -10,15 +10,36 @@ import RegisterPage from "./pages/RegisterPage";
 import InformationPage from "./pages/InformationPage";
 import PaymentSuccessPage from "./pages/PaymentSuccessPage";
 import FailedPaymentPage from "./pages/FailedPaymentPage";
+import { Toaster } from "react-hot-toast";
+import ProfilePage from "./pages/ProfilePage";
 
 const App = () => {
 	return (
 		<>
 			<Header />
-
+			<Toaster
+				toastOptions={{
+					style: {
+						border: "3px solid green",
+						padding: "16px",
+						fontStyle: "bold",
+					},
+					success: {
+						style: {
+							color: "green",
+						},
+					},
+					error: {
+						style: {
+							color: "red",
+						},
+					},
+				}}
+			/>
 			<Routes>
 				<Route path="/" element={<HomePage />} />
 				<Route path="/home" element={<HomePage />} />
+				<Route path="/profile" element={<ProfilePage />} />
 				<Route path="/payment" element={<PaymentPage />} />
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/information" element={<InformationPage />} />

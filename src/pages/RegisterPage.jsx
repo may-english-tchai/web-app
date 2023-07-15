@@ -1,9 +1,9 @@
-import Register from "../components/Register";
+import RegisterForm from "../components/RegisterForm";
 
 const RegisterPage = () => {
 	return (
 		<>
-			<Register />
+			<RegisterForm />
 		</>
 	);
 };
