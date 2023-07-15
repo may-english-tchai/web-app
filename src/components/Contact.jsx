@@ -2,7 +2,7 @@ import "../assets/styles/contact.scss";
 import Button from "./elements/Button";
 import Title from "./elements/Title";
 import { api } from "../store/http";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const handleSubmit = (e) => {
 	e.preventDefault();
@@ -75,7 +75,6 @@ const Contact = () => {
 					</form>
 				</div>
 			</div>
-			<Toaster containerStyle={{ marginTop: "150px" }} reverseOrder={true} />
 		</div>
 	);
 };
