@@ -20,17 +20,18 @@ const App = () => {
 			<Toaster
 				toastOptions={{
 					style: {
-						border: "3px solid green",
 						padding: "16px",
 						fontStyle: "bold",
 					},
 					success: {
 						style: {
+							border: "1px solid green",
 							color: "green",
 						},
 					},
 					error: {
 						style: {
+							border: "1px solid red",
 							color: "red",
 						},
 					},

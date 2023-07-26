@@ -16,23 +16,23 @@ const Availability = () => {
 	useEffect(() => {
 		graphql({
 			query: `query {
-		availabilities {
-        edges {
-        node {
-            id
-            start
-            duration
-            price
-            capacity
-            teacher { name surname }
-            status {code label }
-            restaurant { id name address postcode city }
-            language { id label }
-            participations { totalCount }
+        availabilities(start: { after : "now"}) {
+          edges {
+            node {
+              id
+              start
+              duration
+              price
+              capacity
+              teacher { name surname }
+              status {code label }
+              restaurant { id name address postcode city }
+              language { id label }
+              participations { totalCount }
+            }
+          }
         }
-        }
-    }
-    }`,
+      }`,
 		}).then((response) => {
 			const nodes = response.data.data.availabilities.edges.map(
 				(edge) => edge.node,
