@@ -3,6 +3,10 @@
 		{
 			"source": "(.*)",
 			"destination": "/index.html"
+		},
+		{
+			"source": "/registerSW.js",
+			"headers": { "Content-Type": "application/javascript" }
 		}
 	]
 }
