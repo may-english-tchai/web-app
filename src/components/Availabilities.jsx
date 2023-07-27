@@ -1,14 +1,13 @@
 import "../assets/styles/availability.scss";
 import Button from "./elements/Button";
 import { useEffect, useState } from "react";
-import Title from "./elements/Title";
 import Card from "./availability/Card";
 import { graphql } from "../store/http";
 import { BookingStore } from "../store/booking";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
-const Availability = () => {
+const Availabilities = () => {
 	const navigate = useNavigate();
 	const [availabilities, setAvailabilities] = useState([]);
 	const [selected, setSelected] = useState(BookingStore.getAvailability());
@@ -64,11 +63,7 @@ const Availability = () => {
 	};
 
 	return (
-		<div className="availability flex flex-col items-center m-auto w-full h-full">
-			<div className="w-full mt-20">
-				<Title text="MAKE YOUR RESERVATION" textColor="black" hrColor="black" />
-			</div>
-
+		<>
 			<div className="box bg-white rounded p-2 flex flex-wrap justify-between w-11/12">
 				<div className=" text-center w-full mb-2 ">
 					<h4 id="sous-titre">Prochaines disponibilités</h4>
@@ -96,8 +91,8 @@ const Availability = () => {
 					Booking
 				</Button>
 			</div>
-		</div>
+		</>
 	);
 };
 
-export default Availability;
+export default Availabilities;
