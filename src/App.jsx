@@ -39,18 +39,20 @@ const App = () => {
 				}}
 			/>
 			<Routes>
-				<Route path="/" element={<HomePage />} />
-				<Route path="/home" element={<HomePage />} />
+				<Route index path="/" element={<HomePage />} />
+				<Route index path="/home" element={<HomePage />} />
 				<Route path="/profile" element={<ProfilePage />} />
-				<Route path="/payment" element={<PaymentPage />} />
+				<Route path="/payment" element={<PaymentPage />}>
+					<Route path="/success/:id?" element={<PaymentSuccessPage />} />
+					<Route path="/canceled/:id?" element={<FailedPaymentPage />} />
+				</Route>
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/information" element={<InformationPage />} />
-				<Route path="/availabilities" element={<AvailabilitiesPage />} />
-				<Route path="/availability/:id" element={<AvailabilityPage />} />
+				<Route path="/availabilities" element={<AvailabilitiesPage />}>
+					<Route path="/:id" element={<AvailabilityPage />} />
+				</Route>
 				<Route path="/register" element={<RegisterPage />} />
-				<Route path="/payment-success/:id?" element={<PaymentSuccessPage />} />
 				<Route path="*" element={<NotFoundPage />} />
-				<Route path="/payment-canceled/:id?" element={<FailedPaymentPage />} />
 			</Routes>
 
 			<Footer />
