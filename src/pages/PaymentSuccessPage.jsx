@@ -1,8 +1,11 @@
+import { useParams } from "react-router-dom";
 import PaymentSuccessful from "../components/payment/PaymentSuccessful";
 
 const PaymentSuccessPage = () => {
+	const { id } = useParams();
+	console.log(id);
+
 	/*
-  const { id } = useParams();
   const [payment] = useState(null);
 
   graphql(`
