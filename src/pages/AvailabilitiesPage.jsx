@@ -1,4 +1,4 @@
-import Availabilities from "../components/Availabilities";
+import Availabilities from "../components/availability/Availabilities";
 import Title from "../components/elements/Title";
 
 const AvailabilitiesPage = () => {

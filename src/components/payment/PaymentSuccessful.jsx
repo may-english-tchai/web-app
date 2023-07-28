@@ -41,36 +41,31 @@ const PaymentSuccessful = () => {
 	};
 
 	return (
-		<div className="flex h-screen flex-col md:flex-row items-center max-w-screen-xl mx-auto my-auto">
-			<div className="successfulPayment mt-28 flex flex-col items-center text-center space-y-10 md:space-y-10 md:mx-8 md:w-1/2">
-				<div className="text-base md:text-3xl">
-					<h2>Paiement Reussi</h2>
-				</div>
-				<div>
-					<p className=" text-base md:text-xl">
-						Nous attendons avec impatience notre prochain cours ensemble. <br />
-						Préparez-vous à plonger dans une expérience d&apos;apprentissage
-						passionnante et enrichissante !
-					</p>
-				</div>
-				<div>
-					<Button
-						className="custom-button"
-						style={
-							isButtonHovered
-								? { ...buttonStyle, ...buttonHoverStyle }
-								: buttonStyle
-						}
-						onMouseEnter={handleButtonMouseEnter}
-						onMouseLeave={handleButtonMouseLeave}
-						onClick={returnHomePage}
-					>
-						Retour à la page d&apos;accueil
-					</Button>
-				</div>
+		<div className="successfulPayment mt-28 flex flex-col items-center text-center space-y-10 md:space-y-10 md:mx-8 md:w-1/2">
+			<div className="text-base md:text-3xl">
+				<h2>Paiement Reussi</h2>
 			</div>
-			<div className="md:w-1/2">
-				<img src="/img/payment_successful.svg" alt="payment_successful" />
+			<div>
+				<p className=" text-base md:text-xl">
+					Nous attendons avec impatience notre prochain cours ensemble. <br />
+					Préparez-vous à plonger dans une expérience d&apos;apprentissage
+					passionnante et enrichissante !
+				</p>
+			</div>
+			<div>
+				<Button
+					className="custom-button"
+					style={
+						isButtonHovered
+							? { ...buttonStyle, ...buttonHoverStyle }
+							: buttonStyle
+					}
+					onMouseEnter={handleButtonMouseEnter}
+					onMouseLeave={handleButtonMouseLeave}
+					onClick={returnHomePage}
+				>
+					Retour à la page d&apos;accueil
+				</Button>
 			</div>
 		</div>
 	);

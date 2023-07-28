@@ -5,7 +5,7 @@ import Button from "./elements/Button";
 const Join = () => {
 	const navigate = useNavigate();
 	const handleClick = () => {
-		navigate("/availability");
+		navigate("/availabilities");
 	};
 
 	return (

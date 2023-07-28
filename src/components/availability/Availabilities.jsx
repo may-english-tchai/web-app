@@ -1,9 +1,9 @@
-import "../assets/styles/availability.scss";
-import Button from "./elements/Button";
+import "../../assets/styles/availability.scss";
+import Button from "../elements/Button";
 import { useEffect, useState } from "react";
-import Card from "./availability/Card";
-import { graphql } from "../store/http";
-import { BookingStore } from "../store/booking";
+import Card from "./Card";
+import { graphql } from "../../store/http";
+import { BookingStore } from "../../store/booking";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
@@ -76,6 +76,10 @@ const Availabilities = () => {
 						key={availability.id}
 						onClick={() => {
 							setSelected(availability);
+						}}
+						dbClick={() => {
+							console.log("double click");
+							navigate(`/availability/${availability.id}`);
 						}}
 					/>
 				))}
