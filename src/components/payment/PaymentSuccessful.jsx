@@ -3,9 +3,54 @@ import "../../assets/styles/paymentsuccessful.scss";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useEffect } from "react";
+import { graphql } from "../../store/http";
+import PropTypes from "prop-types";
 
-const PaymentSuccessful = () => {
+const PaymentSuccessful = ({ id }) => {
 	const [isButtonHovered, setIsButtonHovered] = useState(false);
+	const [payment, setPayment] = useState(null);
+
+	graphql({
+		query: `{
+    payment(id: "/api/payments/${id}") {
+      id
+      participation {
+        id
+        availability {
+          start
+          restaurant {
+            name
+          }
+          language {
+            label
+          }
+          teacher {
+            name
+            surname
+          }
+          participations {
+            totalCount
+          }
+          capacity
+        }
+      }
+      amount
+      statusLabel
+      reference
+    }
+  }`,
+	})
+		.then((response) => {
+			if (response.data.errors !== undefined)
+				console.log(response.data.data.errors[0].message);
+			// toast.error("Une erreur est survenue");
+
+			setPayment(response.data.data.payment);
+		})
+		.catch((err) => {
+			console.log(err);
+			//toast.error("Une erreur est survenue");
+		});
 
 	const handleButtonMouseEnter = () => {
 		setIsButtonHovered(true);
@@ -43,7 +88,10 @@ const PaymentSuccessful = () => {
 	return (
 		<div className="successfulPayment mt-28 flex flex-col items-center text-center space-y-10 md:space-y-10 md:mx-8 md:w-1/2">
 			<div className="text-base md:text-3xl">
-				<h2>Paiement Reussi</h2>
+				<h2>Paiement Réussi</h2>
+				{payment?.reference && (
+					<i className="fa-solid text-green-700 fa-check-double" />
+				)}
 			</div>
 			<div>
 				<p className=" text-base md:text-xl">
@@ -69,6 +117,10 @@ const PaymentSuccessful = () => {
 			</div>
 		</div>
 	);
+};
+
+PaymentSuccessful.propTypes = {
+	id: PropTypes.string.isRequired,
 };
 
 export default PaymentSuccessful;
