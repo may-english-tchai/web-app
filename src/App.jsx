@@ -43,12 +43,12 @@ const App = () => {
 				<Route index path="/home" element={<HomePage />} />
 				<Route path="/profile" element={<ProfilePage />} />
 				<Route path="/payment" element={<PaymentPage />} />
-				<Route path="/payment/success/:id?" element={<PaymentSuccessPage />} />
-				<Route path="/payment/canceled/:id?" element={<FailedPaymentPage />} />
+				<Route path="/payment-success/:id?" element={<PaymentSuccessPage />} />
+				<Route path="/payment-canceled/:id?" element={<FailedPaymentPage />} />
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/information" element={<InformationPage />} />
 				<Route path="/availabilities" element={<AvailabilitiesPage />} />
-				<Route path="/availabilities/:id" element={<AvailabilityPage />} />
+				<Route path="/availability/:id" element={<AvailabilityPage />} />
 				<Route path="/register" element={<RegisterPage />} />
 				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
