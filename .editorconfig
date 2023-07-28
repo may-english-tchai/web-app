@@ -40,10 +40,6 @@ indent_size = 4
 indent_style = space
 indent_size = 2
 
-[composer.json]
-indent_style = space
-indent_size = 4
-
 [docker-compose{,.*}.{yaml,yml}]
 indent_style = space
 indent_size = 2

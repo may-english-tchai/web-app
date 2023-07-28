@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import Time from "../elements/Time";
 import "../../assets/styles/card.scss";
 import { useEffect, useState } from "react";
+//import String from "../../store/string";
 
 const Card = ({ onClick, availability, selected = false }) => {
 	const start = new Date(availability.start);
@@ -22,6 +23,8 @@ const Card = ({ onClick, availability, selected = false }) => {
 		}
 	};
 
+	//const id = String.getUuidFromIri(availability.id);
+
 	const clickHandler = capacityReached ? null : handleClick;
 	const keyUpHandler = capacityReached ? null : handleClick;
 	const keyDownHandler = capacityReached ? null : handleClick;
@@ -37,7 +40,15 @@ const Card = ({ onClick, availability, selected = false }) => {
 		>
 			<div className="text-center">
 				<p className="font-bold">
+					<i
+						className={`fa-regular fa-square${
+							selected ? "-check text-green-600" : ""
+						} float-left`}
+					/>
 					<Time datetime={start} />
+					{/* <Link to={`/availabilities/${id}`} className="float-right">
+            <i className="fa-solid fa-external-link" />
+          </Link> */}
 				</p>
 				<span className="text-gray-600 text-xs">
 					<i className="fa-solid fa-clock" /> {availability.duration} min
@@ -103,7 +114,6 @@ Card.propTypes = {
 		}).isRequired,
 		price: PropTypes.number.isRequired,
 		capacity: PropTypes.number.isRequired,
-		maxCapacity: PropTypes.number.isRequired,
 	}).isRequired,
 };
 

@@ -6,7 +6,7 @@ import Title from "./elements/Title";
 const Reservation = () => {
 	const navigate = useNavigate();
 	const handleClick = () => {
-		navigate("/availability");
+		navigate("/availabilities");
 	};
 
 	return (
@@ -31,7 +31,7 @@ const Reservation = () => {
 						<img
 							id="pictureReservation"
 							src="/img/Reservez.png"
-							alt="conversation"
+							alt="Fond d'écran de réservation"
 						/>
 					</div>
 				</div>
