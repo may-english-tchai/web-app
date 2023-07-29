@@ -22,12 +22,22 @@ const ConfirmationUpdate = () => {
 						<div className="flex lg:flex-row justify-center items-center mx-auto flex-col">
 							<div className="flex w-full justify-center items-center lg:mx-24 lg:my-8 my-4 max-w-[8rem] ">
 								<Link to="/account">
-									<Button style={{ borderColor: "#784F5B" }}>Mon compte</Button>
+									<Button
+										className={"button-update"}
+										style={{ borderColor: "#784F5B" }}
+									>
+										Mon compte
+									</Button>
 								</Link>
 							</div>
-							<div className="flex w-full justify-center items-center lg:mx-24 lg:my-8 my-4  max-w-[8rem] ">
+							<div className=" flex w-full justify-center items-center lg:mx-24 lg:my-8 my-4  max-w-[8rem] ">
 								<Link to="/">
-									<Button style={{ borderColor: "#784F5B" }}>Acceuil</Button>
+									<Button
+										className={"button-update"}
+										style={{ borderColor: "#784F5B" }}
+									>
+										Acceuil
+									</Button>
 								</Link>
 							</div>
 						</div>
