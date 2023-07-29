@@ -43,17 +43,23 @@ const Contact = () => {
 					<form onSubmit={handleSubmit} method="post">
 						<div className="form-item">
 							<input id="name" type="text" name="sender" required />
-							<label htmlFor="name">Nom</label>
+							<label className="contact-label" htmlFor="name">
+								Nom
+							</label>
 						</div>
 
 						<div className="form-item">
 							<input id="email" type="text" name="email" required />
-							<label htmlFor="email">E-mail</label>
+							<label className="contact-label" htmlFor="email">
+								E-mail
+							</label>
 						</div>
 
 						<div className="form-item">
 							<input id="phone" type="text" name="sender" required />
-							<label htmlFor="phone">Téléphone</label>
+							<label className="contact-label" htmlFor="phone">
+								Téléphone
+							</label>
 						</div>
 
 						<div className="form-item">
@@ -64,7 +70,9 @@ const Contact = () => {
 								rows="5"
 								required
 							/>
-							<label htmlFor="message">Message</label>
+							<label className="contact-label" htmlFor="message">
+								Message
+							</label>
 						</div>
 
 						<div className="form-item">
