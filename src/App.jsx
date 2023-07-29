@@ -14,6 +14,7 @@ import FailedPaymentPage from "./pages/FailedPaymentPage";
 import { Toaster } from "react-hot-toast";
 import ProfilePage from "./pages/ProfilePage";
 import AccountPage from "./pages/AccountPage";
+import ConfirmationUpdatePage from "./pages/ConfirmationUpdatePage";
 
 const App = () => {
 	return (
@@ -54,6 +55,10 @@ const App = () => {
 				<Route path="*" element={<NotFoundPage />} />
 				<Route path="/payment-canceled/:id?" element={<FailedPaymentPage />} />
 				<Route path="/account" element={<AccountPage />} />
+				<Route
+					path="/confirmation-information"
+					element={<ConfirmationUpdatePage />}
+				/>
 			</Routes>
 
 			<Footer />
