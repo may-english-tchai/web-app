@@ -56,13 +56,13 @@
   margin: 33px;
 }
 
-label,
+.contact-label,
 input,
 textarea {
   font-family: "Poppins", sans-serif;
 }
 
-label {
+.contact-label {
   position: absolute;
   left: 3%;
   color: black;
@@ -87,10 +87,10 @@ textarea {
   margin: 0;
 }
 
-input:focus + label,
-input:valid + label,
-textarea:focus + label,
-textarea:valid + label {
+input:focus + .contact-label,
+input:valid + .contact-label,
+textarea:focus + .contact-label,
+textarea:valid + .contact-label {
   font-size: clamp(15px, 1.3vw, 15px);
   color: black;
   top: -30px;
