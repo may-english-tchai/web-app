@@ -15,6 +15,8 @@ import { Toaster } from "react-hot-toast";
 import ProfilePage from "./pages/ProfilePage";
 import AccountPage from "./pages/AccountPage";
 import ConfirmationUpdatePage from "./pages/ConfirmationUpdatePage";
+import UpdatePasswordPage from "./pages/UpdatePasswordPage";
+import UpdateAccountPage from "./pages/UpdateAccountPage";
 
 const App = () => {
 	return (
@@ -59,6 +61,8 @@ const App = () => {
 					path="/confirmation-information"
 					element={<ConfirmationUpdatePage />}
 				/>
+				<Route path="/update-password" element={<UpdatePasswordPage />} />
+				<Route path="/updateAccount" element={<UpdateAccountPage />} />
 			</Routes>
 
 			<Footer />
