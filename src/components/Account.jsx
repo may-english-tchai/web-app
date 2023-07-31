@@ -1,7 +1,34 @@
 import "../assets/styles/account.scss";
 import Button from "./elements/Button";
+import { graphql } from "../store/http";
+import { useEffect, useState } from "react";
 
 const Account = () => {
+	const [userData, setUserData] = useState([]);
+
+	const fetchUser = () => {
+		graphql({
+			query: `{
+			meUser {
+			  email
+			  name
+			  surname
+			  phone
+			}
+		  }`,
+		})
+			.then((response) => {
+				setUserData(response.data.data.meUser);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
+
+	useEffect(() => {
+		fetchUser();
+	}, []);
+
 	return (
 		<div className="flex flex-col items-center m-auto h-screen">
 			<div className="frame overflow-scroll flex m-auto w-11/12 justify-center h-4/5 items-center border-2 rounded-lg shadow-lg md:max-w-7xl flex-col ">
@@ -22,18 +49,18 @@ const Account = () => {
 						<div className="flex flex-col lg:grid lg:grid-cols-2  ml-9 md:flex-col">
 							<div className="text-lg">
 								<p>Nom</p>
-								<p>Doe</p>
+								<p>{userData.name}</p>
 								<hr className="hr-small" />
 								<p className="mt-8">email</p>
-								<p>John.doe@gmail.com</p>
+								<p>{userData.email}</p>
 								<hr className="hr-small" />
 							</div>
 							<div className=" text-lg">
 								<p>Prenom</p>
-								<p>John</p>
+								<p>{userData.surname}</p>
 								<hr className="hr-small" />
 								<p className="mt-8">Telephone</p>
-								<p>06.01.02.03.04</p>
+								<p>{userData.phone}</p>
 								<hr className="hr-small" />
 							</div>
 						</div>
