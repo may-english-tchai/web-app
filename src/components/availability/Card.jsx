@@ -40,11 +40,13 @@ const Card = ({ onClick, availability, selected = false }) => {
 		>
 			<div className="text-center">
 				<p className="font-bold">
-					<i
-						className={`fa-regular fa-square${
-							selected ? "-check text-green-600" : ""
-						} float-left`}
-					/>
+					{onClick !== undefined ? (
+						<i
+							className={`fa-regular fa-square${
+								selected ? "-check text-green-600" : ""
+							} float-left`}
+						/>
+					) : null}
 					<Time datetime={start} />
 					{/* <Link to={`/availabilities/${id}`} className="float-right">
             <i className="fa-solid fa-external-link" />
