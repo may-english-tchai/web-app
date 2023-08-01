@@ -106,7 +106,7 @@ const Header = () => {
 					{isAuthenticated() ? (
 						<>
 							<li className="navbar_list slideInDown-4">
-								<HashLink to="/profile" className="btn-link">
+								<HashLink to="/account" className="btn-link">
 									Profile
 								</HashLink>
 							</li>
