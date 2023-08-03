@@ -23,7 +23,7 @@ const Footer = () => {
 	}, [location.pathname]);
 
 	return (
-		<footer style={{ backgroundColor }} className="app-footer">
+		<footer style={{ backgroundColor }} id="footer-section">
 			<div id="socialnetwork">
 				<span className="photo">
 					<img src="/img/facebookpic.png" alt="fbpic" />

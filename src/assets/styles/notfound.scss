@@ -1,46 +1,29 @@
 $mainColor:#FEF2F0;
 $color-list: #fd6c9e;
 
-@font-face {
-    font-family: "Architect";
-    src: url(/fonts/ArchitectsDaughter.ttf);
-}
-
-@font-face {
-    font-family: "Inter";
-    src: url(/fonts/Inter-Regular.ttf);
-}
-
-@font-face {
-    font-family: "Inter-semibold";
-    src: url(/fonts/Inter-SemiBold.ttf);
-}
-
 $font-title: Architect;
-$font-main: Inter;
-$font-main_bold: Inter-semibold;
+$font-main: Inter-Regular;
+$font-main_bold: Inter-SemiBold;
 
+#not-found-section {
+  font-family: $font-main;
 
-.NotFoundPage{
-    font-family: $font-main;
-    .picture-error{
-        background-color: $mainColor ;
-    }
+  .picture-error {
+    background-color: $mainColor ;
+  }
 
-    h1{
+  h1 {
+    font-family: $font-title;
+  }
 
-        font-family: $font-title;
-    }
-
-    ul{
-        color: $color-list;
-        font-family: $font-main_bold;
-    }
-
+  ul {
+    color: $color-list;
+    font-family: $font-main_bold;
+  }
 }
 
 @media screen and (max-width: 900px) {
-  img{
+  img {
     width:350px ;
   }
 }

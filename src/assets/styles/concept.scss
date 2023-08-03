@@ -1,19 +1,14 @@
-.Concept {
+#concept-section {
   display: flex;
   justify-content: center;
-  @font-face {
-    font-family: "Merienda";
-    src: url(../../assets/fonts/Merienda-Bold.ttf);
-  }
-  @font-face {
-    font-family: "Inter";
-    src: url(../../assets/fonts/Inter-Medium.ttf);
-  }
+
   $font-primary: Merienda;
   $font-secondary: Inter;
+
   #pinkdiv {
     background-color: #fadbdb;
   }
+
   h2 {
     margin-top: 1px;
     font-family: Merienda;
@@ -22,11 +17,13 @@
     display: flex;
     margin-left: 75px;
   }
+
   hr {
     border: 1px solid #fd81ab;
     margin: auto;
     width: 480px;
   }
+
   #presentation {
     background: rgba(216, 205, 182, 0.14);
     border: 1px solid #dcb253;
@@ -37,6 +34,7 @@
     display: flex;
     flex-direction: column;
   }
+
   h4 {
     font-family: Inter;
     font-size: 40px;
@@ -44,29 +42,34 @@
     margin-top: 10px;
     margin-left: 90px;
   }
+
   p {
     font-family: Inter;
     margin-top: 50px;
     font-size: 24px;
   }
+
   #para {
     margin: 0 auto;
     height: 200px;
     width: 800px;
   }
+
   img {
     opacity: 0.9;
   }
+
   #relative {
     display: flex;
     position: relative;
-    
   }
+
   @media screen and (max-width: 900px) {
     img {
       height: 300px;
       width: 300px;
     }
+
     #presentation {
       background: rgba(216, 205, 182, 0.14);
       border: 1px solid #dcb253;
@@ -77,6 +80,7 @@
       flex-direction: column;
       margin: 0%;
     }
+
     #pinkdiv {
       background: rgba(216, 205, 182, 0.14);
       position: absolute;
@@ -86,16 +90,19 @@
       top: 390px;
       left: 30px;
     }
+
     p {
       font-family: Inter;
       margin-top: 48px;
       font-size: 18px;
     }
+
     #para {
       margin: 0 auto;
       height: 100px;
       width: 350px;
     }
+
     h4 {
       font-family: Inter;
       font-size: 16px;
@@ -103,6 +110,7 @@
       margin-top: 10px;
       margin-left: 9px;
     }
+
     h2 {
       font-family: Merienda;
       color: #fd6c9e;
@@ -111,11 +119,13 @@
       margin-left: -3px;
       margin: 10px;
     }
+
     hr {
       border: 1px solid #fd81ab;
       width: 100px;
     }
   }
+
   @media screen and (max-width: 500px) {
     font-size: 10px;
   }

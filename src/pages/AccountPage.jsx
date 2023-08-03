@@ -2,7 +2,7 @@ import Account from "../components/Account";
 
 const AccountPage = () => {
 	return (
-		<div>
+		<div id="account-section">
 			<Account />
 		</div>
 	);

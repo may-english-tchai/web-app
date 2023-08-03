@@ -7,7 +7,7 @@ const Card = ({ testimony }) => {
 	}
 
 	return (
-		<li>
+		<>
 			<h3>
 				<span className="font-bold float-left">{testimony.name}</span>
 				<small className="text-gray-400 float-right">
@@ -15,7 +15,7 @@ const Card = ({ testimony }) => {
 				</small>
 			</h3>
 			<p className="clear-left mb-4">{testimony.content}</p>
-		</li>
+		</>
 	);
 };
 

@@ -2,56 +2,43 @@ $title-color : #662E3D;
 $border-color:#784F5B;
 $font-title: Inter-bold;
 
-
-@font-face {
-    font-family: "Inter-Bold";
-    src: url(/public/fonts/Inter-Bold.ttf);
-  }
-
 .frame{
     border:solid $border-color ;
 }
 
-h3{
-    color: $title-color;
+h3 {
+  color: $title-color;
 }
 
-h1{
-    font-family: $font-title;
+h1 {
+  font-family: $font-title;
 }
 
-hr{
-    
-    border: solid 1px $border-color;
+hr {
+  border: solid 1px $border-color;
 }
 
-.hr-small{
-    height: 1px; 
-    margin: 10px 0; 
+.hr-small {
+    height: 1px;
+    margin: 10px 0;
     width: 150px;
 }
-
-
-
-
 
 /* Barre de scroll*/
 ::-webkit-scrollbar {
     width: 5px;
     background-color: transparent;
   }
-  
+
   ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 0 transparent;
   }
-  
+
   ::-webkit-scrollbar-thumb {
     background-color: #FF725E;
     border-radius: 6px;
   }
-  
-
 
   .box-card{
-    box-shadow: 3px 4px 8px 2px rgb(0, 0, 0, 0.25); 
+    box-shadow: 3px 4px 8px 2px rgb(0, 0, 0, 0.25);
   }

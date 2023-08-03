@@ -1,11 +1,4 @@
-@font-face {
-    font-family: "Inter";
-    src: url(/public/fonts/Inter-Medium.ttf);
-}
-
-$font-main: Inter;
-
 .successfulPayment{
-    font-family: $font-main;
+  font-family: 'Inter';
 }
 

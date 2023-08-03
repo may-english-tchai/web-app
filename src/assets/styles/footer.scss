@@ -1,4 +1,4 @@
-.app-footer {
+#footer-section {
   height: 170px;
   position: relative;
 
@@ -9,31 +9,39 @@
     width: 150px;
     left: 15px;
   }
+
   #socialnetwork {
     display: flex;
     justify-content: center;
   }
+
   .photo {
     margin: 20px;
   }
+
   #footer-menu {
     display: flex;
     justify-content: center;
   }
+
   #footer-menu span {
     margin: 7px;
   }
+
   span {
     color: white;
   }
+
   #copyright {
     display: flex;
     justify-content: center;
   }
+
   @media screen and (max-width: 900px) {
     height: 150px;
     position: relative;
     padding: 20px;
+
     #logofooter img {
       position: absolute;
       top: 15px;
@@ -41,24 +49,30 @@
       width: 70px;
       left: 10px;
     }
+
     img {
       width: 20px;
       height: 20px;
     }
+
     span {
       font-size: 11px;
     }
+
     .photo {
       margin: 10px;
     }
+
     #footer-menu span {
       font-size: 10px;
     }
   }
+
   @media screen and (max-width: 1024px) {
     height: 150px;
     position: relative;
     padding: 20px;
+
     #logofooter img {
       position: absolute;
       top: 15px;
@@ -66,16 +80,20 @@
       width: 70px;
       left: 10px;
     }
+
     img {
       width: 20px;
       height: 20px;
     }
+
     span {
       font-size: 11px;
     }
+
     .photo {
       margin: 10px;
     }
+
     #footer-menu span {
       font-size: 10px;
     }

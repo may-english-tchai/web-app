@@ -5,11 +5,11 @@ import Button from "./elements/Button";
 const Join = () => {
 	const navigate = useNavigate();
 	const handleClick = () => {
-		navigate("/availabilities");
+		navigate("/availabilities#availabilities-section");
 	};
 
 	return (
-		<div id="join-section" className="Join">
+		<div id="join-section">
 			<div id="relative">
 				<div style={{ backgroundImage: "url('/img/thepicture.png')" }} id="bg">
 					<div id="para">

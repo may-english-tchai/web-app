@@ -3,7 +3,10 @@ import "../assets/styles/notfound.scss";
 
 const NotFoundPage = () => {
 	return (
-		<div className="NotFoundPage flex flex-col md:flex-row items-center">
+		<div
+			id="not-found-section"
+			className="flex flex-col md:flex-row items-center"
+		>
 			<div className="picture-error h-screen flex justify-center w-full md:w-1/2">
 				<img src="/img/picture_error.svg" alt="picture_error" />
 			</div>

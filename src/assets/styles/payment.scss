@@ -1,31 +1,27 @@
 .Payment {
-  @font-face {
-    font-family: "MeriendaBold";
-    src: url(/fonts/Merienda-Bold.ttf);
-  }
-  @font-face {
-    font-family: "InterBold";
-    src: url(/fonts/Inter-Bold.ttf);
-  }
   $font-primary: Merienda;
   $font-secondary: Inter;
   $font-three: Laila;
+
   #relative {
     display: flex;
     position: relative;
   }
+  
   #bg {
     width: 50%;
     height: 1068px;
     background-size: cover;
   }
+
   #divOne {
     width: 50%;
     height: 1068px;
   }
+
   h2 {
     display: flex;
-    font-family: "MeriendaBold";
+    font-family: "Merienda";
     margin-top: 109px;
     font-size: 40px;
   }
@@ -75,7 +71,7 @@
     transform: translateY(-600px);
   }
   p {
-    font-family: "InterBold";
+    font-family: "Inter-Bold";
     font-size: 28px;
     width: 720px;
     margin-top: 70px;
@@ -85,7 +81,7 @@
     #relative {
       display: flex;
       position: relative;
-      
+
     }
     #bg {
       display: none;
@@ -115,7 +111,7 @@
       margin: 0%;
     }
     p {
-      font-family: "InterBold";
+      font-family: "Inter-Bold";
       font-size: 20px;
       width: 265px;
       margin-top: 70px;

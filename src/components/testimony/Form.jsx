@@ -4,19 +4,14 @@ import { useState } from "react";
 const Form = () => {
 	const [name, setName] = useState("");
 	const [content, setContent] = useState("");
-	const [error, setError] = useState(false);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (content.length < 20) {
-			setError(true);
-		} else {
-			api.post("/testimonies", {
-				name,
-				content,
-			});
-			setError(false);
-		}
+
+		api.post("/testimonies", {
+			name,
+			content,
+		});
 	};
 
 	return (
@@ -25,21 +20,21 @@ const Form = () => {
 				type="text"
 				name="name"
 				placeholder="Name"
+				minLength={3}
 				onChange={(e) => setName(e.target.value)}
 				value={name}
 			/>
 			<textarea
 				style={{
-					border: error
-						? "4px solid red"
-						: "border-image: 1px solid $colorSpecial",
+					border: "border-image: 1px solid $colorSpecial",
 				}}
 				placeholder="Message"
 				name="content"
+				minLength={20}
 				onChange={(e) => setContent(e.target.value)}
 				value={content}
 			/>
-			{error && <p>Veuillez écrire un minimum de 20 caractères</p>}
+
 			<input type="submit" value="envoyer" />
 		</form>
 	);

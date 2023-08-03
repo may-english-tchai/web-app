@@ -4,7 +4,10 @@ import Button from "../components/elements/Button";
 const Information = () => {
 	return (
 		<>
-			<div className="Information flex relative justify-center items-center">
+			<div
+				id="information-section"
+				className="Information flex relative justify-center items-center"
+			>
 				<div className="menu-information flex flex-col text-center items-center absolute">
 					<div className="title flex">
 						<hr />

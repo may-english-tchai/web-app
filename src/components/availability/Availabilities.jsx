@@ -58,7 +58,7 @@ const Availabilities = () => {
 				return;
 			}
 			BookingStore.setAvailability(selected);
-			navigate("/payment");
+			navigate("/payment#payment-section");
 		});
 	};
 

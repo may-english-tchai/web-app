@@ -3,8 +3,8 @@ import Title from "./elements/Title";
 
 const Concept = () => {
 	return (
-		<div id="concept-section" className="Concept">
-			<div id="relative">
+		<div id="concept-section" className="h-screen">
+			<div id="relative" className="my-8">
 				<div id="pinkdiv">
 					<img src="img/cafe1.png" alt="cafe" />
 				</div>

@@ -16,9 +16,9 @@ const PaymentPage = () => {
 	const availability = BookingStore.getAvailability();
 
 	return (
-		<>
+		<div id="payment-section">
 			<Payment availability={availability} />
-		</>
+		</div>
 	);
 };
 

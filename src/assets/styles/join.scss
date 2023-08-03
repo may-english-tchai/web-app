@@ -1,23 +1,4 @@
-.Join {
-  @font-face {
-    font-family: "Merienda";
-    src: url(/fonts/Merienda-Bold.ttf);
-  }
-  @font-face {
-    font-family: "Inter";
-    src: url(/fonts/Inter-Medium.ttf);
-  }
-  @font-face {
-    font-family: "Laila";
-    src: url(/fonts/Laila-Regular.ttf);
-  }
-  @font-face {
-    font-family: "InterLight";
-    src: url(/fonts/Inter-Light.ttf);
-  }
-  $font-primary: Merienda;
-  $font-secondary: Inter;
-  $font-three: Laila;
+#join-section {
 
   #relative {
     display: flex;
@@ -40,11 +21,12 @@
   }
 
   #pOne {
-    font-family: "InterLight";
+    font-family: "Inter-Light";
     font-size: 30px;
     color: #775460;
     margin-left: 18px;
   }
+
   #pTwo {
     font-family: "Laila";
     font-size: 64px;
@@ -52,6 +34,7 @@
     color: #775460;
     margin-left: 18px;
   }
+
   #pThree {
     font-family: "Inter";
     margin-top: 85px;
@@ -59,6 +42,7 @@
     color: #775460;
     margin-left: 18px;
   }
+
   button {
     background: rgba(255, 255, 255, 0.45);
     border: 1px solid #000000;
@@ -68,15 +52,18 @@
     margin-top: 55px;
     margin-left: 283px;
   }
+
   #relative {
     position: relative;
   }
+
   @media screen and (max-width: 900px) {
     #bg {
       height: 500px;
       width: 500px;
       background-size: cover;
     }
+
     #para {
       position: absolute;
       height: 248px;
@@ -87,8 +74,9 @@
       padding-top: 10px;
       top: 107px;
     }
+
     #pOne {
-      font-family: "InterLight";
+      font-family: "Inter-Light";
       font-size: 13px;
       margin-left: 18px;
       width: 280px;

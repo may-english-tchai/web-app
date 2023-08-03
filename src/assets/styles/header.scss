@@ -2,11 +2,6 @@ $color-1: rgba(255, 255, 255, 0.62);
 $color-2: #fd6c9e;
 $font-secondary: Inter;
 
-@font-face {
-  font-family: "Inter";
-  src: url(../../assets/fonts/Inter-Medium.ttf);
-}
-
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -33,6 +28,7 @@ $font-secondary: Inter;
   padding: 0 0.8rem;
   font-size: 20px;
   color: black;
+
   &:hover {
     color: $color-2;
   }
@@ -42,7 +38,7 @@ $font-secondary: Inter;
   position: relative;
   display: flex;
   justify-content: center;
-  
+
 
   &::after {
     content: "";

@@ -37,28 +37,30 @@ const Testimony = () => {
 	}, []);
 
 	return (
-		<div id="testimony-section" className="testimony">
-			<div id="testimony-container">
-				<Title text="Temoignage" textColor="#FD6C9E" hrColor="#FD6C9E" />
+		<div id="testimony-section">
+			<Title text="Temoignage" textColor="#FD6C9E" hrColor="#FD6C9E" />
 
+			<div id="testimony-container">
 				<div>
+					<div>
+						<img
+							src="img/guillemet2.svg"
+							alt="Testimony"
+							className="w-20 h-40 sm:w-20 sm:h-20"
+						/>
+					</div>
 					<ul>
-						<div>
-							<img
-								src="img/guillemet2.svg"
-								alt="Testimony"
-								className="w-20 h-48 sm:w-20 sm:h-20"
-							/>
-						</div>
-						{testimonyData.map((testimony) => (
-							<Card testimony={testimony} key={testimony.id} />
-						))}
+						<li>
+							{testimonyData.map((testimony) => (
+								<Card testimony={testimony} key={testimony.id} />
+							))}
+						</li>
 					</ul>
 					<div className="flex justify-end">
 						<img
 							src="img/guillemet2.svg"
 							alt="Testimony"
-							className="w-20 h-48 sm:w-20 sm:h-20 transform rotate-180"
+							className="w-20 h-40 sm:w-20 sm:h-20 transform rotate-180"
 						/>
 					</div>
 				</div>
