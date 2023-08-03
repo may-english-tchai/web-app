@@ -97,14 +97,7 @@ const Account = () => {
 						</Button>
 					</Link>
 				</div>
-				<div className="password w-full flex flex-col">
-					<h3 className="ml-9 text-xl">Modifier mon mot de passe</h3>
-				</div>
-				<div className="flex w-full justify-center my-4 ">
-					<Link to="/update-password">
-						<Button style={{ borderColor: "#784F5B" }}>Modifier</Button>
-					</Link>
-				</div>
+
 				<div className="password w-full flex flex-col">
 					<h3 className="ml-9 text-xl">Mon prochain cours</h3>
 				</div>
@@ -117,6 +110,14 @@ const Account = () => {
 					) : (
 						<p>Vous n&apos;avez pas de rendez-vous prochainement.</p>
 					)}
+				</div>
+				<div className="password w-full flex flex-col">
+					<h3 className="ml-9 text-xl">Modifier mon mot de passe</h3>
+				</div>
+				<div className="flex w-full justify-center my-4 ">
+					<Link to="/update-password">
+						<Button style={{ borderColor: "#784F5B" }}>Modifier</Button>
+					</Link>
 				</div>
 			</div>
 		</div>
