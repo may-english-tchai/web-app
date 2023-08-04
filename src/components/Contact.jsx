@@ -20,6 +20,7 @@ const handleSubmit = (e) => {
 					color: "#2C7A35",
 				},
 			});
+			form.reset();
 		})
 		.catch(() => {
 			toast("Une erreur s'est produite lors de l'envoi du message.", {
